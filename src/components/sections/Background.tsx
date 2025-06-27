@@ -9,7 +9,8 @@ export default function Background() {
           src="/assets/bg/delorean.svg" 
           alt="DeLorean" 
           className="delorean"
-          fill
+          width={200}
+          height={100}
         />
       </div>
       <div className="top">
@@ -24,13 +25,15 @@ export default function Background() {
           src="/assets/bg/palm-small.svg" 
           alt="Palm Small" 
           className="palm small"
-          fill
+          width={100}
+          height={150}
         />
         <Image 
           src="/assets/bg/palm.svg" 
           alt="Palm" 
           className="palm"
-          fill
+          width={150}
+          height={200}
         />
       </div>
       <div className="bottom">
