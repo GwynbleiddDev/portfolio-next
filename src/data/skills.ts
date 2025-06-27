@@ -29,12 +29,24 @@ export const skills: Skill[] = [
     image: 'nextjs'
   },
   {
+    name: 'Vue.js',
+    image: 'vue'
+  },
+  {
     name: 'Tailwindcss',
     image: 'tailwindcss'
   },
   {
+    name: 'Bootstrap',
+    image: 'bootstrap'
+  },
+  {
     name: 'Sass',
     image: 'sass'
+  },
+  {
+    name: 'PHP',
+    image: 'php'
   },
   {
     name: 'Node.js',
@@ -45,8 +57,24 @@ export const skills: Skill[] = [
     image: 'nestjs'
   },
   {
-    name: 'Vue.js',
-    image: 'vue'
+    name: 'MySQL',
+    image: 'mysql'
+  },
+  {
+    name: 'PostgreSQL',
+    image: 'postgre'
+  },
+  {
+    name: 'MongoDB',
+    image: 'mongodb'
+  },
+  {
+    name: 'VScode',
+    image: 'vscode'
+  },
+  {
+    name: 'GitHub',
+    image: 'github'
   },
   {
     name: 'Photoshop',

@@ -10,19 +10,19 @@ export interface Project {
 export const projects: Project[] = [
   {
     name: 'POS Next',
-    link: '',
+    link: 'https://pos-next.netlify.app',
     image: '',
     type: 'FullStack'
   },
   {
-    name: 'POS Next',
-    link: '',
+    name: 'CashTrackr',
+    link: 'https://cashtrackr-frontend.netlify.app',
     image: '',
     type: 'FullStack'
   },
   {
-    name: 'POS Next',
-    link: '',
+    name: 'DevTree',
+    link: 'https://devtree-gwynbleidd.netlify.app',
     image: '',
     type: 'FullStack'
   },
