@@ -45,21 +45,20 @@ export default function Contact() {
           data-aos="fade-up"
         >
           {socialNetworks.map(socialN => (
-            <>
-              <a
-                href={socialN.link}
-                className="w-20 text-xl"
-              >
-                <Image
-                  className="w-10 sm:w-15 mx-auto mt-4 md:mt-auto mb-2 md:mb-4"
-                  src={`/assets/redes/${socialN.image}.svg`}
-                  alt="logo linkedin"
-                  width={100}
-                  height={100}
-                />
-                {socialN.name}
-              </a>
-            </>
+            <a
+              key={socialN.name}
+              href={socialN.link}
+              className="w-20 text-xl"
+            >
+              <Image
+                className="w-10 sm:w-15 mx-auto mt-4 md:mt-auto mb-2 md:mb-4"
+                src={`/assets/redes/${socialN.image}.svg`}
+                alt={`logo ${socialN.name}`}
+                width={100}
+                height={100}
+              />
+              {socialN.name}
+            </a>
           ))}
         </div>
       </div>

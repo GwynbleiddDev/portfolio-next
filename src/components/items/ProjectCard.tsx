@@ -23,8 +23,10 @@ export default function ProjectCard({name, link, image, type}: ProjectCardProps)
           >
             <Image 
               className="proyecto-card rounded-xl" 
-              src={`${image}`} 
+              src={`/assets/projects/${image}.png`} 
               alt="imagen proyecto"
+              width={150}
+              height={100}
             />
           </Link>
           <p className="text-gray-400 text-xl mt-6">{type}</p>
