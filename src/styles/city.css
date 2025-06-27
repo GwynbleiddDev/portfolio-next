@@ -1,0 +1,38 @@
+.city-svg {
+    width: 100%;
+    height: 100%;
+    max-height: 500px; 
+    display: block;
+}
+
+@keyframes city-sun {
+    0%   { transform: translateY(0); }
+    25%  { transform: translateY(85px); }
+    75%  { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+.city-sun {
+    animation: city-sun 10s linear infinite;
+}
+
+@keyframes city-lights {
+    0%   { opacity: 1; }
+    50%  { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.city-lights {
+    animation: city-lights 2s infinite ease-in-out;
+}
+
+@keyframes city-star {
+    0%   { transform: translateY(0); }
+    25%  { transform: translateY(15px); }
+    75%  { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+.city-star {
+    animation: city-star 10s linear infinite;
+}

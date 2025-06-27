@@ -1,0 +1,151 @@
+
+/* ========================== VARIABLES ======================== */
+:root {
+    --labs-sys-color-background: #111;
+    --labs-sys-color-on-background: white;
+    --base-speed: 6s;
+    --labs-sys-color-grid: #00b7ff;
+    --labs-sys-color-grid-glow: #ff007a;
+    --labs-sys-color-sun-1: #00b7ff;
+    --labs-sys-color-sun-2: #ff007a;
+    --labs-sys-color-sun-glow: #b300ff;
+    --labs-sys-color-star: #ff007a;
+    --color-palm-trunk: #333;
+    --color-palm-leaf: #333;
+    --color-palm-leaf-2: #b300ff;
+    --labs-sys-color-triangle: #00b7ff;
+}
+
+/* ============ GLOBALES ============== */
+body {
+    overflow-y: auto;
+    min-height: 100vh;
+    background-color: var(--labs-sys-color-background);
+    color: var(--labs-sys-color-on-background);
+}
+
+section, header {
+    min-height: 100vh;
+    width: 100%;
+}
+
+header#home, section, main {
+    overflow-x: hidden;
+}
+
+.nav-link {
+    transition: color 0.3s ease;
+}
+
+li.active {
+    background-color: #001f74;
+}
+
+li.active .nav-link {
+    color: #c5d5ff;
+    pointer-events: none;
+    cursor: default; 
+}
+
+li {
+    padding: .4rem 15%;
+    transition: background-color 0.3s ease;
+    border-radius: .5rem ;
+}
+
+@media (min-width: 768px) {
+    li {
+        padding: .5rem 1rem;
+    }
+}
+
+@media (min-width: 960px) {
+    li {
+        padding: .5rem 2.6rem;
+    }
+}
+
+.proyecto-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.proyecto-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0.625rem 1.25rem rgba(79, 70, 229, 0.5);
+}
+
+@media (max-width: 640px) {
+    .p-20 {
+        padding: 1rem;
+    }
+}
+
+/* ====================== Botón de navegación ================ */
+.nav-toggle {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 40px;
+    height: 40px;
+    background: #030712;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 60;
+    transition: background 0.3s ease;
+}
+
+.nav-toggle svg {
+    width: 24px;
+    height: 24px;
+}
+
+.nav-toggle:hover {
+    background: #0c1839;
+}
+
+/* ======================= NAV ====================== */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #030712;
+}
+
+@media (max-width: 767px) {
+    nav {
+        transform: translateX(-100%);
+        width: 12rem;
+        height: 100vh;
+        border-right: 1px solid #9333ea;
+        transition: transform 0.3s ease; /* Solo tlf */
+    }
+
+    nav.show {
+        transform: translateX(0);
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding-top: 60px;
+        height: 100%;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+}
+
+@media (min-width: 768px) {
+    .nav-toggle {
+        display: none;
+        top: -2;
+    }
+}
+
+.neon-up {
+    box-shadow: 0 -4px 16px rgba(147, 51, 234, 0.7);
+}

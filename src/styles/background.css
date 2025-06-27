@@ -1,0 +1,344 @@
+
+@property --shift {
+    syntax: "<number>";
+    inherits: false;
+    initial-value: 0;
+}
+
+.scene {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: height 0.2s ease;
+}
+
+.scene:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: url(https://assets.codepen.io/907471/noise.svg);
+    opacity: 0.7;
+    mix-blend-mode: overlay;
+    filter: invert(1);
+    z-index: 20000;
+}
+
+.delorean-container {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10rem;
+    height: auto;
+    animation: delorean 30s ease infinite;
+    z-index: 11111;
+}
+.delorean-container::after {
+    content: "";
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    height: 3rem;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 35%;
+    filter: blur(0.25rem);
+    z-index: -1;
+}
+.delorean {
+    width: 100%;
+    height: auto;
+}
+
+@keyframes delorean {
+    from { transform: translateX(-50%) translateY(0); }
+    9% { transform: translateX(calc(-50% - 2vmin)); }
+    20% { transform: translateX(-50%); }
+    50% { transform: translateX(-50%) translateY(6vmin) scale(1.25); }
+    to { transform: translateX(-50%) translateY(0); }
+}
+
+.sun {
+    position: absolute;
+    width: 22rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    bottom: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.sun:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* mask: linear-gradient(to top, 
+    #000 calc(1% + (3.5% * var(--shift))), 20%, 
+    transparent calc(9% + (2.7% * var(--shift))), 0%,
+    #000 calc(10% + (6.7% * var(--shift))), 0%, 
+    transparent calc(17% + (3% * var(--shift))), 0%, 
+    #000 calc(20% + (6.5% * var(--shift))), 0%, 
+    transparent calc(25% + (2.8% * var(--shift))), 0%, 
+    #000 calc(26% + (6.5% * var(--shift))), 0%, 
+    transparent calc(33% + (2.8% * var(--shift))), 0%,
+    #000 calc(34% + (6.5% * var(--shift))), 0%, 
+    transparent calc(41% + (2.8% * var(--shift))), 0%, 
+    #000 calc(42% + (6.5% * var(--shift))), 0%, 
+    transparent calc(49% + (2.8% * var(--shift))), 0%,
+    #000 calc(50% + (6.5% * var(--shift))), 0%, 
+    transparent calc(56% + (2.8% * var(--shift))), 0%, 
+    #000 calc(57% + (2.5% * var(--shift)))); 
+    mask-size: 100% 120%;
+    animation: sun calc(var(--base-speed) / 1.5) linear infinite; */
+    border-radius: inherit;
+    background-image: linear-gradient(to bottom, var(--labs-sys-color-sun-1), var(--labs-sys-color-sun-2) 45%);
+} 
+
+.sun:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to top, var(--labs-sys-color-sun-1), var(--labs-sys-color-sun-2) 55%, var(--labs-sys-color-triangle) 65%, var(--labs-sys-color-sun-2) 69%);
+    border-radius: inherit;
+    transform: translateY(100%) rotateX(40deg) scaleY(1.2);
+    perspective: 6.25rem;
+    filter: blur(1.25rem);
+}
+.sun {
+    filter: drop-shadow(0 0 3rem var(--labs-sys-color-sun-glow));
+}
+
+@keyframes sun {
+    from { --shift: 1; }
+    to { --shift: 2; }
+}
+
+.top-lines {
+    background: linear-gradient(to bottom, var(--labs-sys-color-sun-2) 0.2vmin, transparent 0.2vmin);
+    background-size: 125rem 0.4vmin;
+    position: absolute;
+    inset: 0;
+    mix-blend-mode: overlay;
+    opacity: 0.06;
+    pointer-events: none;
+}
+
+.top {
+    padding-top: 4rem;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+}
+.top:after {
+    content: "";
+    position: absolute;
+    bottom: -0.5vmin;
+    left: 0;
+    right: 0;
+    background: #222;
+    height: 5vmin;
+    clip-path: polygon(0% 38%, 2.6% 40%, 5.4% 24%, 8.7% 59%, 13.6% 72%, 18.5% 22%, 21.7% 39%, 27.2% 8%, 40% 46%, 44% 34%, 48.1% 58%, 54.5% 35%, 60% 53%, 65.4% 63%, 73.4% 15%, 79.8% 29%, 86.5% 15%, 94.1% 36%, 100% 27%, 100% 100%, 0% 100%);
+}
+.top:before {
+    content: "";
+    position: absolute;
+    bottom: -1vmin;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.2);
+    mix-blend-mode: soft-light;
+    height: 15vmin;
+    backdrop-filter: blur(1.25rem);
+    clip-path: polygon(0% 38%, 2.6% 40%, 5.4% 24%, 8.7% 59%, 13.6% 72%, 18.5% 22%, 21.7% 35%, 27.2% 15%, 31% 52%, 36.4% 91%, 49.1% 100%, 54.5% 144%, 74% 40%, 77.2% 56%, 80.6% 28%, 84.4% 0%, 87.1% 13%, 94.2% 27%, 100% 32%, 100% 100%, 0% 100%);
+}
+
+.bottom-overlay {
+    perspective: 14.5rem;
+    flex: 0 0 12.5rem;
+    position: absolute;
+    z-index: 10000;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 12.5rem;
+    background: radial-gradient(ellipse at center, transparent 50%, rgba(30, 30, 30, 0.9) 70%);
+}
+
+.bottom {
+    background: inherit;
+    perspective: 14.5rem;
+    flex: 0 0 12.5rem;
+    position: relative;
+}
+
+.bottom:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    --line-width: 0.0635rem;
+    background: linear-gradient(to right, var(--labs-sys-color-grid) var(--line-width), transparent var(--line-width)), linear-gradient(to bottom, var(--labs-sys-color-grid) var(--line-width), transparent var(--line-width));
+    background-size: 2rem 125rem, 125rem 2rem;
+    transform: rotateX(53deg) scale(1.8) translateZ(2.6875rem);
+    animation: grid calc(var(--base-speed) * 1) linear infinite;
+    border-top: 1px solid var(--labs-sys-color-grid);
+    filter: drop-shadow(0 0 0.125rem var(--labs-sys-color-grid-glow));
+}
+
+@keyframes grid {
+    from { background-position-y: -30rem; }
+    to { background-position-y: 0%; }
+}
+
+#stars {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 35%;
+    overflow: hidden;
+    left: 0;
+    z-index: -1;
+    animation: stars 20s linear infinite;
+}
+
+#stars .star {
+    position: absolute;
+    background: var(--labs-sys-color-star);
+    width: 0.15rem;
+    height: 0.15rem;
+    border-radius: 50%;
+    transform: translate(var(--x), var(--y));
+    box-shadow: 0 0 0.25rem var(--labs-sys-color-sun-glow);
+}
+
+@keyframes stars {
+    from { transform: translateX(0); }
+    60% { transform: translateX(3vmax) rotate(1deg); }
+    to { transform: translateX(0); }
+}
+
+.palm.small {
+    position: absolute;
+    bottom: -2%;
+    right: 20%;
+    width: 19rem;
+    height: 19rem;
+    animation: small-palm-shaking 6s ease-in-out infinite;
+}
+
+@media (min-width: 560px) {
+    .palm.small {
+        right: 25%;
+    } 
+}
+
+@media (min-width: 768px) {
+    .palm.small {
+        right: 30%;
+    }
+}
+
+@media (min-width: 990px) {
+    .palm.small {
+        right: 40%;
+    }
+}
+
+.palm:not(.small) {
+    position: absolute;
+    bottom: 0%;
+    right: 20%;
+    width: 9rem;
+    height: 15rem;
+    animation: palm-shaking 5s ease-in-out infinite;
+}
+
+@media (min-width: 560px) {
+    .palm:not(.small) {
+        right: 30%;
+    } 
+}
+
+@media (min-width: 768px) {
+    .palm:not(.small) {
+        right: 35%;
+    } 
+}
+
+@media (min-width: 990px) {
+    .palm:not(.small) {
+        right: 42%;
+    } 
+}
+
+@keyframes palm-shaking {
+    from { transform: translate(10vmin, 0vmin) rotate(6deg); }
+    50% { transform: translate(10.5vmin, 0vmin) rotate(7.5deg); }
+    to { transform: translate(10vmin, 0vmin) rotate(6deg); }
+}  
+
+@media (min-width: 640px) {
+    @keyframes palm-shaking {
+        from { transform: translate(10vmin, 0vmin) rotate(6deg); }
+        50% { transform: translate(10.5vmin, 0vmin) rotate(9deg); }
+        to { transform: translate(10vmin, 0vmin) rotate(6deg); }
+    }  
+}
+
+@keyframes small-palm-shaking {
+    from { transform: translate(5rem, 5rem) scale(0.4) rotate(345deg) skewX(5deg); }
+    50% { transform: translate(5.5rem, 5rem) scale(0.4) rotate(350deg) skewX(5deg); }
+    to { transform: translate(5rem, 5rem) scale(0.4) rotate(345deg) skewX(5deg); }
+}
+
+.startails {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    mix-blend-mode: lighten;
+}
+
+.startail-r {
+    position: absolute;
+    left: 83vw;
+    bottom: 20%;
+    background: linear-gradient(to right, var(--labs-sys-color-sun-glow) 10%, var(--labs-sys-color-triangle) 50%, transparent 80%);
+    height: 0.2vmin;
+    width: 13vmin;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 0.9375rem white);
+    transform: translateY(-32vmin) rotate(-20deg);
+}
+
+.startail-l {
+    position: absolute;
+    left: 11vw;
+    bottom: 50%;
+    background: linear-gradient(to right, var(--labs-sys-color-sun-glow) 10%, var(--labs-sys-color-triangle) 30%, transparent 60%);
+    height: 0.2vmin;
+    width: 28vmin;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 0.9375rem white);
+    transform: translateY(-7vmin) rotate(-20deg);
+}
+
+.startail-m {
+    position: absolute;
+    left: 18vw;
+    bottom: 0;
+    background: linear-gradient(to right, var(--labs-sys-color-sun-glow) 10%, var(--labs-sys-color-triangle) 50%, transparent 80%);
+    height: 0.2vmin;
+    width: 14vmin;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 0.9375rem white);
+    transform: translateY(-18vmin) rotate(-20deg);
+    opacity: 0.5;
+}
