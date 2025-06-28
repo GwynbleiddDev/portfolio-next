@@ -14,7 +14,7 @@ export default function NavBar() {
 
   return (
     <nav 
-      className="fixed top-0 left-0 w-full bg-gray-950 backdrop-blur-md z-50 shadow-lg shadow-purple-900/50 border-b-1 border-purple-900"
+      className="fixed w-full bg-gray-950 backdrop-blur-md z-50 shadow-lg shadow-purple-900/50 border-b-1 border-purple-900"
     >
       <ul 
         className="flex justify-center gap-4 md:gap-0 py-4 md:py-0 md:flex-row flex-col md:items-center font-bold"

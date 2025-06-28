@@ -15,8 +15,8 @@ export default function Skills() {
       >
 
         <Heading
-          color="indigo"
-          mb="12"
+          color="text-indigo-400"
+          mb="mb-8"
           aos="fade-up"
         >Skills</Heading>
 

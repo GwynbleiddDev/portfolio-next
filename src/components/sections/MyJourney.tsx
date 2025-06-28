@@ -20,14 +20,15 @@ export default function MyJourney() {
             data-aos-delay="100"
             width={100}
             height={200}
+            unoptimized
           />
         </div>
 
         <div className="text-center md:text-right" data-aos="fade-left">
           
           <Heading
-            color="pink"
-            mb="8"
+            color="text-blue-500"
+            mb="mb-6"
           >My Journey</Heading>
 
           <p className="text-lg text-gray-300">

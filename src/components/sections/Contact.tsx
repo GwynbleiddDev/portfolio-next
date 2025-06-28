@@ -32,13 +32,13 @@ export default function Contact() {
       className="min-h-screen flex items-center bg-transparent relative z-10 p-4"
     >
       <div className="max-w-4xl mx-auto p-6 text-center bg-gray-950/40 shadow-lg shadow-purple-900/50 rounded-lg border-1 border-purple-900">
-          
+        
         <Heading
-          color="purple"
-          mb="6"
+          color="text-purple-400"
+          mb="mb-6"
         >Contact</Heading>
 
-        <p className="mb-4 sm:mb-6">Toach the icons for contact me!</p>
+        <p className="mb-4 mt-4">Toach the icons for contact me!</p>
 
         <div
           className="grid grid-cols-2 sm:grid-cols-4 justify-center md:p-8 gap-8 md:gap-20 lg:gap-40 md:mb-6"

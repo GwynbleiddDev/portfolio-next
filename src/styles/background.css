@@ -14,7 +14,7 @@
     top: 0;
     left: 0;
     z-index: -1;
-    transition: height 0.2s ease;
+    transition: height 0.1s ease;
 }
 
 .scene:after {
@@ -22,7 +22,7 @@
     position: absolute;
     inset: 0;
     pointer-events: none;
-    background: url(https://assets.codepen.io/907471/noise.svg);
+    background: url('/assets/bg/noise.svg');
     opacity: 0.7;
     mix-blend-mode: overlay;
     filter: invert(1);
@@ -202,7 +202,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    bottom: 35%;
+    bottom: 40%;
     overflow: hidden;
     left: 0;
     z-index: -1;

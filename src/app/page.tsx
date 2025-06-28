@@ -14,7 +14,6 @@ export default function Home() {
     <>
       <Background />
       <NavBar />
-      {/* <LangToggle /> */}
       
       <Header />
       

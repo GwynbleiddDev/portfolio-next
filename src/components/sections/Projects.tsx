@@ -14,8 +14,8 @@ export default function Projects() {
         data-aos="fade-up"
       >
           <Heading
-            color="indigo"
-            mb="12"
+            color="text-indigo-400"
+            mb="mb-8"
             aos='fade-up'
           >Projects</Heading>
 

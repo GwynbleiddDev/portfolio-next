@@ -15,8 +15,8 @@ export default function AboutMe() {
         <div className="md:w-1/3 text-center md:text-left" data-aos="fade-right">
           
           <Heading
-            color="purple"
-            mb="8"
+            color="text-purple-400"
+            mb="mb-8"
           >About Me</Heading>
           
           <p className="text-lg text-gray-300">
