@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image'
 import { CSSProperties } from 'react'
 import { useStars, Star } from '@/utils/stars'
