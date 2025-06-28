@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
+@import 'aos/dist/aos.css';
+
 @import url('../styles/app.css');
 @import url('../styles/background.css');
 @import url('../styles/city.css');
 @import url('../styles/glitch.css');
+@import url('../styles/loading.css');

@@ -1,6 +1,7 @@
-import type { Metadata } from "next";
+import type { Metadata } from "next"
 import { Rajdhani } from 'next/font/google'
-import "./globals.css";
+import "./globals.css"
+import LenisProvider from '@/components/lenis/LenisProvider';
 
 const rajdhani = Rajdhani({
   subsets: ['latin'],
@@ -22,7 +23,7 @@ export default function RootLayout({
       <body
         className={`${rajdhani.className} antialiased`}
       >
-        {children}
+        <LenisProvider>{children}</LenisProvider>
       </body>
     </html>
   );

@@ -4,14 +4,17 @@ export default function Footer() {
   return (
     <footer
       id="footer"
-      className="bg-gray-950 border-t border-purple-900 py-6 text-center text-white z-10 relative neon-up"
+      className="z-10 relative"
     >
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 px-4">
-        <p className="text-gray-300 text-sm md:text-base">
-          © 2025 Alejandro Valera. All rights reserved.
-        </p>
-        <div className="flex flex-col md:flex-row gap-4 items-center">
-          
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 px-4 mb-5">
+        
+        <div className="bg-gray-950/60 border rounded-lg border-purple-900 py-6 px-10 text-center shadow-purple-900/80">
+          <p className="text-gray-300 text-sm md:text-base">
+            © 2025 Alejandro Valera. All rights reserved.
+          </p>
+        </div>
+
+        <div className="flex flex-col md:flex-row bg-gray-950/60 border rounded-lg border-purple-900 shadow-purple-900/80 p-6 gap-4 items-center">
           <a
             href="https://drive.google.com/drive/folders/1xe8sUbS3ZVCWrYPO9ETUzqaDT9aJTtHi?usp=sharing"
             className="text-indigo-400 hover:text-indigo-200 text-sm md:text-base transition-colors duration-300 flex items-center gap-2"
