@@ -1,20 +1,26 @@
-import Link from "next/link"
+'use client';
+
+import Link from 'next/link';
 
 interface NavButtonProps {
-  href: string
-  id: string
-  label: string
-  isActive?: boolean
+  href: string;
+  id: string;
+  label: string;
+  isActive?: boolean;
+  onClick?: () => void;
 }
 
-export default function NavButton({href, id, label, isActive = false }: NavButtonProps) {
+export default function NavButton({ href, id, label, isActive, onClick }: NavButtonProps) {
   return (
-    <li className={isActive ? 'active' : ''}>
-      <Link
-        href={href}
-        id={id}
-        className={`nav-link text-indigo-400 hover:text-indigo-200 ${isActive ? 'text-indigo-200' : ''}`}
-      >{label}</Link>
-    </li>
-  )
+    <Link
+      href={href}
+      id={id}
+      className={`text-indigo-400 hover:text-indigo-200 transition-colors duration-300 ${
+        isActive ? 'underline underline-offset-4' : ''
+      }`}
+      onClick={onClick}
+    >
+      {label}
+    </Link>
+  );
 }

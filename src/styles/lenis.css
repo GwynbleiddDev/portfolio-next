@@ -1,7 +1,4 @@
 
-@import 'aos/dist/aos.css';
-
-
 [data-lenis-scroll] {
   opacity: 0;
   transform: translateX(100%); /* Entra desde la derecha */

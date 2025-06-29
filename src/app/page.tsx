@@ -11,6 +11,7 @@ import Skills from "@/components/sections/Skills";
 import AOS from 'aos'
 import { useEffect, useState } from "react";
 import LoadingPage from "@/components/extras/LoadingPage";
+import NavBar from "@/components/ui/NavBar";
 
 
 export default function Home() {
@@ -28,7 +29,7 @@ export default function Home() {
 
     const loadResources = async () => {
       await document.fonts.ready
-      await new Promise((resolve) => setTimeout(resolve, 3000))
+      await new Promise((resolve) => setTimeout(resolve, 2000))
       setIsLoading(false);
     }
     loadResources()
@@ -41,7 +42,7 @@ export default function Home() {
   return (
     <>
       <Background />
-      {/* <NavBar /> */}
+      <NavBar /> 
       
       <Header />
       

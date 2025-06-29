@@ -33,8 +33,6 @@ export default function AboutMe() {
         </div>
         <div
           className="md:w-2/3 w-full flex justify-center mx-auto"
-          data-aos="fade-right"
-          data-aos-delay="600"
         >
           <City />
         </div>

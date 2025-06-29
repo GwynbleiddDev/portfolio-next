@@ -81,7 +81,7 @@ li {
 }
 
 /* ====================== Botón de navegación ================ */
-.nav-toggle {
+/* .nav-toggle {
     position: fixed;
     top: 10px;
     left: 10px;
@@ -104,10 +104,10 @@ li {
 
 .nav-toggle:hover {
     background: #0c1839;
-}
+} */
 
 /* ======================= NAV ====================== */
-nav {
+/* nav {
     position: fixed;
     top: 0;
     left: 0;
@@ -121,7 +121,7 @@ nav {
         width: 12rem;
         height: 100vh;
         border-right: 1px solid #9333ea;
-        transition: transform 0.3s ease; /* Solo tlf */
+        transition: transform 0.3s ease; /* Solo tlf 
     }
 
     nav.show {
@@ -148,4 +148,4 @@ nav {
 
 .neon-up {
     box-shadow: 0 -4px 16px rgba(147, 51, 234, 0.7);
-}
+} */

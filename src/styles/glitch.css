@@ -237,7 +237,7 @@
 .scanlines {
   overflow: hidden;
   mix-blend-mode: difference;
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   width: 102%;

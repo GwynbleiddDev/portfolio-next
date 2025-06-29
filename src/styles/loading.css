@@ -20,10 +20,10 @@
   width:20px;
   height:36px;
   opacity:0;
-  animation:move 3s linear infinite;
-  -o-animation:move 3s linear infinite;
-  -moz-animation:move 3s linear infinite;
-  -webkit-animation:move 3s linear infinite;
+  animation:move 2s linear infinite;
+  -o-animation:move 2s linear infinite;
+  -moz-animation:move 2s linear infinite;
+  -webkit-animation:move 2s linear infinite;
   transform:rotate(180deg);
   -o-transform:rotate(180deg);
   -moz-transform:rotate(180deg);
