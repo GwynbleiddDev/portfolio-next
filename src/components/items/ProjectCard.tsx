@@ -1,5 +1,4 @@
 import Image from "next/image"
-import Link from "next/link"
 
 type ProjectCardProps = {
   name: string,
@@ -11,25 +10,25 @@ type ProjectCardProps = {
 export default function ProjectCard({name, link, image, type}: ProjectCardProps) {
   return (
     <div
-      className="bg-[#0d0d0d] border sm:p-8 md:p-6 border-indigo-500/50 rounded-lg p-6"
+      className="bg-[#0d0d0d] border py-2 border-indigo-500/50 rounded-lg flex flex-col items-center"
       
     >
       <h3 
-        className="text-2xl font-semibold text-indigo-300 mb-4"
+        className="text-xl font-semibold text-indigo-300"
       >{name}</h3>
-          <Link 
+          <a 
             href={`${link}`} 
             target="_blank"
           >
             <Image 
-              className="proyecto-card rounded-xl" 
+              className="my-2 rounded-xl" 
               src={`/assets/projects/${image}.png`} 
               alt="imagen proyecto"
               width={150}
               height={100}
             />
-          </Link>
-          <p className="text-gray-400 text-xl mt-6">{type}</p>
+          </a>
+          <p className="text-gray-400 text-sm">{type}</p>
     </div>
   )
 }

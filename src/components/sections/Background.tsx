@@ -7,12 +7,10 @@ import { useStars, Star } from '@/utils/stars'
 
 export default function Background() {
   
-  const stars = useStars(15, 0.6)
+  const stars = useStars(20, 0.55)
 
   return (
     <>
-      <div className="scalines"></div>
-      <div className="noise-overlay"></div>
       <div
         className="scene" 
       >

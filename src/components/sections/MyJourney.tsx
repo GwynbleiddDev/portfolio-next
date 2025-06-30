@@ -34,9 +34,9 @@ export default function MyJourney() {
           <p className="text-lg text-gray-300">
             I completed courses on platforms like Udemy where I learned to build
             web applications from scratch. I mastered creating responsive
-            websites, languages like PHP and JavaScript, and building databases
-            with MySQL and connecting APIs. Currently, I am exploring React and
-            Vue.js to expand my skills.
+            websites, languages like JavaScript and Typescript, Frameworks like React and Nextjs 
+            and building databases with MySQL and connecting APIs.
+            Currently, I am exploring Next.js and Nest.js to expand my skills.
           </p>
         </div>
       </div>

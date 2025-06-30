@@ -1,26 +1,35 @@
-'use client';
+'use client'
 
-import Link from 'next/link';
+import Link from 'next/link'
 
 interface NavButtonProps {
-  href: string;
-  id: string;
-  label: string;
-  isActive?: boolean;
-  onClick?: () => void;
+  href: string
+  id: string
+  label: string
+  isActive: boolean
+  onClick: () => void
 }
 
+
 export default function NavButton({ href, id, label, isActive, onClick }: NavButtonProps) {
+  
+  const handleClick = () => {
+    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' })
+    onClick()
+  }
+
   return (
     <Link
       href={href}
       id={id}
-      className={`text-indigo-400 hover:text-indigo-200 transition-colors duration-300 ${
-        isActive ? 'underline underline-offset-4' : ''
+      className={`transition-colors duration-300 ${
+        isActive
+          ? 'text-indigo-200 cursor-not-allowed'
+          : 'text-indigo-400 hover:text-indigo-200'
       }`}
-      onClick={onClick}
+      onClick={handleClick}
     >
       {label}
     </Link>
-  );
+  )
 }

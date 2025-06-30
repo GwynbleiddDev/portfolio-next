@@ -6,7 +6,7 @@ export type Star = {
   y: number;
 }
 
-export const useStars = (starCount: number = 15, heightRatio: number = 0.6) => {
+export const useStars = (starCount: number, heightRatio: number) => {
   
   const [stars, setStars] = useState<Star[]>([]);
 

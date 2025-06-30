@@ -20,4 +20,3 @@
   transform: translateX(100%); /* Desaparece a la derecha */
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
-

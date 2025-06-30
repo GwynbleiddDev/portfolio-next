@@ -38,8 +38,6 @@ export default function Contact() {
           mb="mb-6"
         >Contact</Heading>
 
-        <p className="mb-4 mt-4">Toach the icons for contact me!</p>
-
         <div
           className="grid grid-cols-2 sm:grid-cols-4 justify-center md:p-8 gap-8 md:gap-20 lg:gap-40 md:mb-6"
         >

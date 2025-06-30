@@ -1,10 +1,14 @@
+import { GlobeAltIcon } from "@heroicons/react/24/outline"
+
+
 export default function LangToggle() {
   return (
-    <button
-      id="lang-toggle"
-      className="fixed border-1 border-purple-900 rounded-lg top-4 right-6 p-4 md:p-2 md:top-0 md:right-2 lg:right-4 md:border-0 font-bold text-xl text-indigo-400 hover:text-indigo-200 transition-colors duration-300"
-    >
-      <span className="lang-label">ES</span>
-    </button>
-  );
+      <button
+        id="lang-toggle"
+        className="fixed bottom-6 left-10 flex justify-center items-center gap-2 text-sm font-bold text-indigo-400 hover:text-indigo-200 transition-colors duration-300"
+      >
+        <GlobeAltIcon className="w-5 h-5" />
+        <span className="lang-label">ES</span>
+      </button>
+  )
 }
