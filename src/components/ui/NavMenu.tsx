@@ -21,7 +21,7 @@ type NavMenuProps = {
 export default function NavMenu({ isOpen, activeSection, setActiveSection, onClose }: NavMenuProps) {
   
   const navItems: NavItem[] = [
-    { href: '#home', id: 'nav-home', label: 'Alejandro V.' },
+    { href: '#hero', id: 'nav-hero', label: 'Alejandro V.' },
     { href: '#about', id: 'nav-about', label: 'About Me' },
     { href: '#skills', id: 'nav-skills', label: 'Skills' },
     { href: '#journey', id: 'nav-journey', label: 'My Journey' },

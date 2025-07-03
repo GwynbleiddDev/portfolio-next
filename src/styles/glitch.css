@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:ital,wght@0,400;1,400&display=swap');
 
-.heading {
+
+.title{
   font-family: "Oswald", sans-serif;
   font-style: italic;
 }
 
 .glitch, .glow {
-  font-size: 2.5rem;
+  font-size: 2.65rem;
   animation: glitch 5s 5s infinite;
 }
 
@@ -15,6 +16,17 @@
     font-size: 5rem;
     letter-spacing: .07em;
     animation: glitch 5s 5s infinite;
+  }
+}
+
+.glitchSim {
+  font-size: 2.65rem;
+}
+
+@media (min-width: 768px) {
+  .glitchSim {
+    font-size: 5rem;
+    letter-spacing: .07em;
   }
 }
 
@@ -38,6 +50,43 @@
   animation: noise-2 3s linear infinite alternate-reverse, glitch 5s 5s infinite;
 }
 
+.glow {
+  text-shadow: 0 0 1000px #dfbfbf;
+  color: transparent;
+  position: absolute;
+}
+
+.subtitle {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.06rem;
+  letter-spacing: .27em;
+  text-transform: uppercase;
+  animation: glitch-2 5s 5.02s infinite;
+}
+
+@media (min-width: 768px) {
+  .subtitle {
+    letter-spacing: 1.2em;
+    font-size: 1.1rem;
+  }
+}
+
+.subSim {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.05rem;
+  letter-spacing: .25em;
+}
+
+@media (min-width: 768px) {
+  .subSim {
+    font-weight: 700;
+    letter-spacing: 1.2em;
+    font-size: 1.1rem;
+  }
+}
+
 @keyframes glitch {
   1% {
     transform: rotateX(10deg) skewX(90deg);
@@ -46,6 +95,7 @@
     transform: rotateX(0deg) skewX(0deg);
   }
 }
+
 @keyframes noise-1 {
   3.3333333333% {
     clip-path: inset(63px 0 28px 0);
@@ -138,6 +188,7 @@
     clip-path: inset(29px 0 2px 0);
   }
 }
+
 @keyframes noise-2 {
   0% {
     clip-path: inset(91px 0 7px 0);
@@ -231,57 +282,6 @@
   }
   100% {
     clip-path: inset(52px 0 8px 0);
-  }
-}
-
-.scanlines {
-  overflow: hidden;
-  mix-blend-mode: difference;
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 102%;
-  height: 102%;
-}
-
-.scanlines::before {
-  content: "";
-  position: fixed;
-  width: 102%;
-  height: 102%;
-  top: 0;
-  left: 0;
-  background: repeating-linear-gradient(to bottom, transparent 0%, rgba(255, 255, 255, 0.05) 0.5%, transparent 1%);
-  animation: fudge 7s ease-in-out alternate infinite;
-}
-
-@keyframes fudge {
-  from {
-    transform: translate(0px, -2%);
-  }
-  to {
-    transform: translate(0px, 0);
-  }
-}
-
-.glow {
-  text-shadow: 0 0 1000px #dfbfbf;
-  color: transparent;
-  position: absolute;
-}
-
-.subtitle {
-  font-weight: 700;
-  text-transform: uppercase;
-  text-align: center;
-}
-
-@media (min-width: 768px) {
-  .subtitle {
-    letter-spacing: 1.2em;
-    font-weight: 700;
-    font-size: 1.2rem;
-    animation: glitch-2 5s 5.02s infinite;
   }
 }
 

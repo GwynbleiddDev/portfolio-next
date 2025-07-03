@@ -5,8 +5,7 @@ import AOS from 'aos'
 import LoadingPage from "@/components/extras/LoadingPage";
 import Background from "@/components/sections/Background";
 import NavBar from "@/components/ui/NavBar";
-import Welcome from "@/components/sections/Welcome";
-import Header from "@/components/sections/Header";
+import Hero from "@/components/sections/Hero";
 import AboutMe from "@/components/sections/AboutMe";
 import Skills from "@/components/sections/Skills";
 import MyJourney from "@/components/sections/MyJourney";
@@ -44,18 +43,18 @@ export default function Home() {
 
   return (
     <>
-      {isLoading && <LoadingPage fadeOut={fadeOut} />}
+      {isLoading && <LoadingPage fadeOut={fadeOut} />} 
       
       <div
         className={`transition-opacity duration-1000 ease-in-out ${
           contentVisible ? 'opacity-100' : 'opacity-0'
         }`}
-      >
+      > 
         <Background />
         <NavBar />
 
-        <Welcome />
-        <Header />
+        <Hero />
+        <div className="h-screen"/>
         <AboutMe />
         <Skills />
         <MyJourney />

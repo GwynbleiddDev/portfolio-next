@@ -54,15 +54,17 @@ export default function NavBar() {
         isOpening={isAnimating === 'opening'}
         isClosing={isAnimating === 'closing'}
       />
-      <NavToggle isOpen={open} onToggle={open ? handleClose : handleOpen} />
-      <NavMenu
-        isOpen={open}
-        activeSection={activeSection}
-        setActiveSection={setActiveSection}
-        onClose={handleClose}
-      />
+      <header>
+        <NavToggle isOpen={open} onToggle={open ? handleClose : handleOpen} />
+        <NavMenu
+          isOpen={open}
+          activeSection={activeSection}
+          setActiveSection={setActiveSection}
+          onClose={handleClose}
+        />
 
-      <WelcomeToggle isOpen={open} />
+        <WelcomeToggle isOpen={open} />
+      </header>
     </>
   )
 }

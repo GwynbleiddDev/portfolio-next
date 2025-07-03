@@ -24,12 +24,12 @@ body {
     color: var(--labs-sys-color-on-background);
 }
 
-section, header {
+section {
     min-height: 100vh;
     width: 100%;
 }
 
-header#home, section, main {
+section, main {
     overflow-x: hidden;
 }
 

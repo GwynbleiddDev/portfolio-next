@@ -6,7 +6,7 @@ export default function Footer() {
       id="footer"
       className="z-10 relative"
     >
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 px-4 mb-5">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between z-10 items-center gap-4 px-4 mb-5">
         
         <div className="bg-gray-950/60 border rounded-lg border-purple-900 py-6 px-10 text-center shadow-purple-900/80">
           <p className="text-gray-300 text-sm md:text-base">

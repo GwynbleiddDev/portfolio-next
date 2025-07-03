@@ -65,16 +65,15 @@ export default function Background() {
             <div
               key={star.id}
               className="star"
-              style={
-                {
-                  '--x': `${star.x}px`,
-                  '--y': `${star.y}px`,
-                } as CSSProperties
-              }
+              style={{
+                '--x': `${star.x}px`,
+                '--y': `${star.y}px`,
+              } as CSSProperties}
             />
           ))}
         </div>
       </div>
+      <div className="scanlines"/>
     </>
   )
 }

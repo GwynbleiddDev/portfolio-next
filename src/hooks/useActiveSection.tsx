@@ -24,7 +24,7 @@ export function useActiveSection(defaultSection = '') {
     )
     observerRef.current = observer
 
-    const sections = document.querySelectorAll('main[id], section[id], header[id]')
+    const sections = document.querySelectorAll('main[id], section[id]')
     sections.forEach((section) => observer.observe(section))
 
     const initialHash = window.location.hash || defaultSection
