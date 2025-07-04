@@ -1,6 +1,5 @@
 export default function City() {
   return (
-    
     <svg
       viewBox="0 0 800 500"
       className="city-svg text-center"

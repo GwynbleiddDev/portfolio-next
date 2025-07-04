@@ -104,7 +104,7 @@
 .sun:before {
     content: "";
     position: absolute;
-    inset: 0;
+    /* inset: 0; */
     background-image: linear-gradient(to top, var(--labs-sys-color-sun-1), var(--labs-sys-color-sun-2) 55%, var(--labs-sys-color-triangle) 65%, var(--labs-sys-color-sun-2) 69%);
     border-radius: inherit;
     transform: translateY(100%) rotateX(40deg) scaleY(1.2);
@@ -115,10 +115,10 @@
     filter: drop-shadow(0 0 3rem var(--labs-sys-color-sun-glow));
 }
 
-@keyframes sun {
+/* @keyframes sun {
     from { --shift: 1; }
     to { --shift: 2; }
-}
+} */
 
 .top-lines {
     background: linear-gradient(to bottom, var(--labs-sys-color-sun-2) 0.2vmin, transparent 0.2vmin);

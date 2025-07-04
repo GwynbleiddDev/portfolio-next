@@ -31,7 +31,7 @@ export default function Home() {
 
     const loadResources = async () => {
       await document.fonts.ready
-      await new Promise((resolve) => setTimeout(resolve, 2000))
+      await new Promise((resolve) => setTimeout(resolve, 1000))
       setFadeOut(true)
       setTimeout(() => {
         setIsLoading(false)
@@ -54,8 +54,9 @@ export default function Home() {
         <NavBar />
 
         <Hero />
-        <div className="h-screen"/>
+        <div className="h-[50vh]"/>
         <AboutMe />
+        <div className="h-[70vh]"/>
         <Skills />
         <MyJourney />
         <Projects />

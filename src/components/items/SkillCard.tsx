@@ -11,7 +11,7 @@ export default function SkillCard({name, image}: SkillCardProps) {
     <div className="flex flex-col items-center"> 
       
       <Image 
-        className="w-15"
+        className="w-15 h-auto"
         src={`/assets/skills/${image}.svg`} 
         alt={`imagen ${name}`}
         width={150}

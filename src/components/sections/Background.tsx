@@ -7,7 +7,7 @@ import { useStars, Star } from '@/utils/stars'
 
 export default function Background() {
   
-  const stars = useStars(20, 0.55)
+  const stars = useStars( 20, 0.55 )
 
   return (
     <>

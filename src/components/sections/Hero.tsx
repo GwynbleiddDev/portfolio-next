@@ -7,16 +7,16 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useLenisScrollTrigger } from '@/hooks/useLenisScrollTrigger';
 
 
-// Registrar ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Hero() {
   
-  const heroRef = useRef<HTMLElement>(null);
-  const glitchContainerRef = useRef<HTMLDivElement>(null);
-  const subtitleContainerRef = useRef<HTMLDivElement>(null);
-  const backRef = useRef<HTMLDivElement>(null);
-  const scroller = useLenisScrollTrigger();
+  const heroRef = useRef<HTMLElement>(null)
+  const glitchContainerRef = useRef<HTMLDivElement>(null)
+  const subtitleContainerRef = useRef<HTMLDivElement>(null)
+  const backRef = useRef<HTMLDivElement>(null)
+
+  const scroller = useLenisScrollTrigger()
 
   useGSAP(() => {
     const ctx = gsap.context(() => { // for react
@@ -27,9 +27,9 @@ export default function Hero() {
       gsap.set(glitchContainerRef.current, {
         scale: 4,
         opacity: 0,
-        top: '50%',
-        left: '50%',
-        transformOrigin: 'center center',
+        // top: '50%',
+        // left: '50%',
+        // transformOrigin: 'center center',
         y: -15,
       })
       
@@ -41,40 +41,62 @@ export default function Hero() {
 
       gsap.set([subtitleContainerRef.current, backRef.current], {
         opacity: 0,
-      });
+      })
 
       const tl = gsap.timeline({ 
         ease: 'power2.out',
         scrollTrigger: {
           start: 'top top',
-          end: '+=1200',
+          end: '+=1300',
           scroller, 
           scrub: true,
           pin: heroRef.current,
           pinSpacing: false,
           // markers: true,
         },
-      });
+      })
 
       tl // ANIMATIONS
-        .to( glitchContainerRef.current,   { scale: 1,           duration: 1.6 }, 0.1 )
-        .to( glitchContainerRef.current,   { opacity: 1,         duration: 0.3 }, 0.15)
-        .to( subtitleContainerRef.current, { opacity: 1, y: -10, duration: 0.3 }, 1.6 )
-        .to( backRef.current,              { opacity: 1,         duration: 0.2 }, 1.9 )
+        .to( glitchContainerRef.current, { 
+            scale: 1, 
+            duration: 1.6 
+          }, 0.1 )
+        .to( glitchContainerRef.current, { 
+          opacity: 1,
+          duration: 0.3 
+        }, 0.15)
+        .to( subtitleContainerRef.current, { 
+          opacity: 1, 
+          y: -10, 
+          duration: 0.3 
+        }, 1.6 )
+        .to( backRef.current, { 
+            opacity: 1,
+            duration: 0.2 
+          }, 1.9 )
         .to([ 
           glitchContainerRef.current, 
           subtitleContainerRef.current, 
-          backRef.current ],               { scale: 1 ,          duration: 1  }, 2.1 )
+          backRef.current ], { 
+            scale: 1 ,          
+            duration: 1.25  
+          }, 2.1 )
         .to([ 
           glitchContainerRef.current, 
           subtitleContainerRef.current, 
-          backRef.current ],               { scale: 0.9,         duration: 0.6 }, 3.1 )
+          backRef.current ], { 
+            scale: 0.9, 
+            duration: 1 
+          }, 3.35 )
         .to([ 
           glitchContainerRef.current, 
           subtitleContainerRef.current, 
-          backRef.current],                { opacity: 0,         duration: 0.25 }, 3.6 )
+          backRef.current], { 
+            opacity: 0,
+            duration: 0.5 
+          }, 4.6 )
 
-    }, heroRef)
+    }, heroRef )
 
     return () => ctx.revert() // clean
   }, { dependencies: [scroller], scope: heroRef })

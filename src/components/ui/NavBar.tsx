@@ -5,6 +5,7 @@ import { useLenis } from 'lenis/react';
 import NavOverlay from '../extras/NavOverlay';
 import NavToggle from './NavToggle';
 import NavMenu from './NavMenu';
+// import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import { useActiveSection } from '@/hooks/useActiveSection';
 import WelcomeToggle from './WelcomeToggle';
 
@@ -14,7 +15,7 @@ export default function NavBar() {
   const [ open, setOpen ] = useState(false)
   const [ isAnimating, setIsAnimating ] = useState<'opening' | 'closing' | null>(null)
   
-  const [ activeSection, setActiveSection ] = useActiveSection('#welcome')
+  const [ activeSection, setActiveSection ] = useActiveSection('#hero')
   
   const lenis = useLenis()
 
@@ -64,6 +65,8 @@ export default function NavBar() {
         />
 
         <WelcomeToggle isOpen={open} />
+
+        {/* <ChevronDownIcon className="h-12 w-12 text-white fixed bottom-1 left-[50%] " /> */}
       </header>
     </>
   )
