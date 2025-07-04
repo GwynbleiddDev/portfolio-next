@@ -9,22 +9,19 @@ export default function MyJourney() {
     >
       <div
         className="max-w-6xl mx-6 md:mx-20 gap-4 md:gap-10 p-4 md:p-10 flex flex-col md:flex-row items-center bg-gray-950 shadow-lg shadow-purple-900/50 rounded-lg border-1 border-purple-900"
-        data-aos="fade-left"
       >
-        <div data-aos="fade-left">
+        <div>
           <Image
             className="sm:w-full md:w-500 lg:w-1000 rounded-lg"
             src="/assets/index/journey.gif"
             alt="journey gif"
-            data-aos="fade-left"
-            data-aos-delay="100"
             width={100}
             height={200}
             unoptimized
           />
         </div>
 
-        <div className="text-center md:text-right" data-aos="fade-left">
+        <div className="text-center md:text-right">
           
           <Heading
             color="text-blue-500"

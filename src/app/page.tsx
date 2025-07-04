@@ -56,8 +56,9 @@ export default function Home() {
         <Hero />
         <div className="h-[50vh]"/>
         <AboutMe />
-        <div className="h-[70vh]"/>
+        <div className="h-[25vh]"/>
         <Skills />
+        <div className="h-[50vh]"/>
         <MyJourney />
         <Projects />
         <Contact />

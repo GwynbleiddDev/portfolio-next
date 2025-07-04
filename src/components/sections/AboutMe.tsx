@@ -65,7 +65,7 @@ export default function AboutMe() {
           scale: 0.9 , 
           duration: 16 
         }, '<' )
-        .fromTo( textContainerRef.current, { y: 20 }, { y: -20 , duration: 16 }, '<' )
+        .fromTo( textContainerRef.current, { y: 20 }, { y: -18 , duration: 16 }, '<' )
         .fromTo( 
           cityContainerRef.current, 
           { 
@@ -117,7 +117,7 @@ export default function AboutMe() {
     }, aboutRef )
 
     return () => ctx.revert() // clean
-  }, { dependencies: [scroller], scope: aboutRef })
+  }, { dependencies: [ scroller ], scope: aboutRef })
 
   return (
     <section
