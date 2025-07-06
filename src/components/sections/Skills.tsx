@@ -21,7 +21,7 @@ export default function Skills() {
   useGSAP(() => {
     const ctx = gsap.context(() => { // React
 
-      gsap.killTweensOf([skillRef.current, backRef.current]) // clean
+      gsap.killTweensOf([skillRef.current, backRef.current, cardRef.current]) // clean
 
       gsap.set( backRef.current, {
         opacity: 0,
@@ -110,8 +110,8 @@ export default function Skills() {
 
   return (
     <section
-      ref={skillRef}
       id="skills"
+      ref={skillRef}
       className="min-h-screen flex items-center bg-transparent relative z-10 p-7"
     >
       <div
@@ -127,12 +127,12 @@ export default function Skills() {
         <div
           className="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-10 gap-6 md:gap-12 mx-auto"
         >
-          {skills.map((skill, index) => (
+          {skills.map((skill, i) => (
             <SkillCard 
               key={skill.name} 
               name={skill.name} 
               image={skill.image} 
-              ref={(el) => { cardRef.current[index] = el }}
+              ref={(el) => { cardRef.current[i] = el }}
             />
           ))}
         </div>

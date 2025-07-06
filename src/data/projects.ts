@@ -3,7 +3,7 @@ export interface Project {
   name: string
   link: string
   image: string
-  type: string
+  type?: string
 }
 
 
@@ -55,5 +55,17 @@ export const projects: Project[] = [
     link: 'https://music-festival-mx.netlify.app',
     image: 'technoedm',
     type: 'Frontend'
+  },
+  {
+    name: 'Github Repositories',
+    link: 'https://github.com/GwynbleiddDev?tab=repositories',
+    image: 'github',
+    type: 'redes'
+  },
+  {
+    name: 'Projects Deployments',
+    link: 'https://app.netlify.com/teams/ale24vv/sites',
+    image: 'netlify',
+    type: 'redes'
   },
 ]

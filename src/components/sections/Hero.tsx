@@ -27,16 +27,13 @@ export default function Hero() {
       gsap.set(glitchContainerRef.current, {
         scale: 4,
         opacity: 0,
-        // top: '50%',
-        // left: '50%',
-        // transformOrigin: 'center center',
         y: -15,
       })
       
       gsap.set(subtitleContainerRef.current, {
         left: '50%',
         top: '50%',
-        x: 5,
+        y: 5,
       })
 
       gsap.set([subtitleContainerRef.current, backRef.current], {
@@ -101,6 +98,19 @@ export default function Hero() {
     return () => ctx.revert() // clean
   }, { dependencies: [scroller], scope: heroRef })
 
+  // const [scrollY, setScrollY] = useState(0);
+
+  // useEffect(() => {
+  //   // Solo ejecuta en el cliente
+  //   const handleScroll = () => {
+  //     setScrollY(window.scrollY);
+  //     console.log('ScrollY:', window.scrollY);
+  //   };
+
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => window.removeEventListener('scroll', handleScroll);
+  // }, []);
+
   return (
     <>
       <section
@@ -110,11 +120,11 @@ export default function Hero() {
       >
         <div
         ref={backRef}
-        className="absolute bg-gray-950/50 rounded-2xl py-2 shadow-purple-900/90 border-1 border-purple-900"
+        className="absolute bg-gray-950/50 rounded-2xl p-2 shadow-purple-900/90 border-1 border-purple-900"
         >
-          <div className="heading flex flex-col justify-center items-center">
-            <h1 className="glitchSim opacity-0 mb-2">ALEJANDRO_VALERA</h1>
-            <p className="subSim opacity-0 ">front-end developer</p>
+          <div className="title flex flex-col justify-center items-center">
+            <h1 className="glitchSim opacity-0 mt-1">ALEJANDRO_VALERA</h1>
+            <p className="subSim opacity-0">front-end developer</p>
           </div>
         </div>
 

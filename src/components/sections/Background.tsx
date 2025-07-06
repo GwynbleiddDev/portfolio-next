@@ -7,7 +7,7 @@ import { useStars, Star } from '@/utils/stars'
 
 export default function Background() {
   
-  const stars = useStars( 20, 0.55 )
+  const stars = useStars( 30, 0.55 )
 
   return (
     <>
@@ -59,8 +59,10 @@ export default function Background() {
           <div className="m2"></div>
           <div className="bottom-overlay"></div>
         </div>
-        
-        <div id="stars">
+      
+        <div 
+          id="stars"
+        >
           {stars.map((star: Star) => (
             <div
               key={star.id}
@@ -73,6 +75,7 @@ export default function Background() {
           ))}
         </div>
       </div>
+      
       <div className="scanlines"/>
     </>
   )

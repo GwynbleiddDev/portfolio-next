@@ -8,7 +8,7 @@ type SkillCardProps = {
 }
 
 export default forwardRef( function SkillCard(
-  { name, image }: SkillCardProps,
+  { name, image } : SkillCardProps,
   ref: Ref<HTMLDivElement>
 ) {
   return (

@@ -12,7 +12,7 @@ gsap.registerPlugin(ScrollTrigger);
 export function useLenisScrollTrigger() {
   
   const lenis = useLenis();
-  const [scroller, setScroller] = useState<HTMLElement | Window | null>(null);
+  const [ scroller, setScroller ] = useState<HTMLElement | Window | null>(null);
 
   useEffect(() => {
     const setupScroller = () => {

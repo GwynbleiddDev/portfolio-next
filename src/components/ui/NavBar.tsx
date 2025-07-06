@@ -7,7 +7,7 @@ import NavToggle from './NavToggle';
 import NavMenu from './NavMenu';
 // import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import { useActiveSection } from '@/hooks/useActiveSection';
-import WelcomeToggle from './WelcomeToggle';
+import HeroToggle from './HeroToggle';
 
 
 export default function NavBar() {
@@ -64,10 +64,10 @@ export default function NavBar() {
           onClose={handleClose}
         />
 
-        <WelcomeToggle isOpen={open} />
-
-        {/* <ChevronDownIcon className="h-12 w-12 text-white fixed bottom-1 left-[50%] " /> */}
+        <HeroToggle isOpen={open} />
       </header>
+
+      {/* <ChevronDownIcon className="h-12 w-12 text-indigo-200 absolute bottom-0 left-1/2" /> */}
     </>
   )
 }

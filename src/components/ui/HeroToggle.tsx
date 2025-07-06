@@ -1,13 +1,11 @@
-import { StarIcon } from "@heroicons/react/24/solid";
-import { useRouter } from "next/navigation";
 
 
-export default function WelcomeToggle({ isOpen }: {isOpen : boolean}) {
+export default function HeroToggle({ isOpen }: {isOpen : boolean}) {
   
-  const router = useRouter()
   const handleClick = () => {
-    router.push('/')
+    window.scrollTo({ top: 600, behavior: 'smooth' })
   }
+
 
   return (
     <>
@@ -18,7 +16,7 @@ export default function WelcomeToggle({ isOpen }: {isOpen : boolean}) {
           aria-label="Toggle menu"
         >
           <span className={`inline-block transition-opacity duration-300 ${isOpen ? 'opacity-0' : 'opacity-100'}`}>
-            <StarIcon className="w-8 h-8 md:w-10 md:h-10" />
+            <h3 className="title text-3xl tracking-[-0.075em] text-indigo-200">AV</h3>
           </span>
         </button>
       </div>

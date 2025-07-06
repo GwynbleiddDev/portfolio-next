@@ -11,7 +11,6 @@ import Skills from "@/components/sections/Skills";
 import MyJourney from "@/components/sections/MyJourney";
 import Projects from "@/components/sections/Projects";
 import Contact from "@/components/sections/Contact";
-import Footer from "@/components/sections/Footer";
 
 
 export default function Home() {
@@ -58,11 +57,12 @@ export default function Home() {
         <AboutMe />
         <div className="h-[25vh]"/>
         <Skills />
-        <div className="h-[50vh]"/>
+        <div className="h-[10vh]"/> 
         <MyJourney />
+        
         <Projects />
+        <div className="h-[60vh]"/> 
         <Contact />
-        <Footer />
       </div>
     </>
   )
