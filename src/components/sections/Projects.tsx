@@ -112,7 +112,7 @@ export default function Projects() {
     <section
       ref={projectsRef}
       id="projects"
-      className="min-h-screen flex items-center p-4 md:p-6 bg-transparent relative z-10"
+      className="min-h-screen flex items-center p-4 md:p-6 bg-transparent relative z-10 overflow-hidden"
     >
       <div
         ref={backRef}

@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef } from 'react';
+import { RefObject, useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -9,8 +9,9 @@ import { useLenisScrollTrigger } from '@/hooks/useLenisScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Hero() {
-  
+
+export default function Hero({ ref }: { ref: RefObject<HTMLElement> }) {
+
   const heroRef = useRef<HTMLElement>(null)
   const glitchContainerRef = useRef<HTMLDivElement>(null)
   const subtitleContainerRef = useRef<HTMLDivElement>(null)
@@ -41,7 +42,7 @@ export default function Hero() {
       })
 
       const tl = gsap.timeline({ 
-        ease: 'power2.out',
+        pin: heroRef.current,
         scrollTrigger: {
           start: 'top top',
           end: '+=1300',
@@ -104,45 +105,36 @@ export default function Hero() {
   //   // Solo ejecuta en el cliente
   //   const handleScroll = () => {
   //     setScrollY(window.scrollY);
-  //     console.log('ScrollY:', window.scrollY);
-  //   };
-
-  //   window.addEventListener('scroll', handleScroll);
-  //   return () => window.removeEventListener('scroll', handleScroll);
-  // }, []);
-
   return (
-    <>
-      <section
-        id="hero"
-        ref={heroRef}
-        className="hero relative min-h-screen flex items-center justify-center bg-transparent z-10 overflow-hidden"
-      >
-        <div
+    <section
+      id="hero"
+      ref={heroRef}
+      className="min-h-screen relative flex items-center justify-center bg-transparent z-10 overflow-hidden"
+    >
+      <div
         ref={backRef}
         className="absolute bg-gray-950/50 rounded-2xl p-2 shadow-purple-900/90 border-1 border-purple-900"
-        >
-          <div className="title flex flex-col justify-center items-center">
-            <h1 className="glitchSim opacity-0 mt-1">ALEJANDRO_VALERA</h1>
-            <p className="subSim opacity-0">front-end developer</p>
-          </div>
+      >
+        <div className="title flex flex-col justify-center items-center">
+          <h1 className="glitchSim opacity-0 mt-1">ALEJANDRO_VALERA</h1>
+          <p className="subSim opacity-0">front-end developer</p>
+        </div>
+      </div>
+
+      <div className="absolute text-center">
+        <div ref={glitchContainerRef}>
+          <h1 className="glitch title" data-text="ALEJANDRO_VALERA">
+            ALEJANDRO_VALERA
+          </h1>
+          <h1 className="glow title">ALEJANDRO_VALERA</h1>
         </div>
 
-        <div className="absolute text-center">
-          <div ref={glitchContainerRef}>
-            <h1 className="glitch title" data-text="ALEJANDRO_VALERA">
-              ALEJANDRO_VALERA
-            </h1>
-            <h1 className="glow title">ALEJANDRO_VALERA</h1>
-          </div>
-
-          <div ref={subtitleContainerRef}>
-            <p className="subtitle text-indigo-400 text-1xl">
-              front-end developer
-            </p>
-          </div>
+        <div ref={subtitleContainerRef}>
+          <p className="subtitle text-indigo-400 text-1xl">
+            front-end developer
+          </p>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }

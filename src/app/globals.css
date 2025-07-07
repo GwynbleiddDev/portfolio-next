@@ -2,8 +2,6 @@
 
 @import 'aos/dist/aos.css';
 
-@import url('../styles/lenis.css');
-
 @import url('../styles/app.css');
 @import url('../styles/background.css');
 @import url('../styles/scanlines.css');

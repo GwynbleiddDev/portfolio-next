@@ -21,9 +21,17 @@ export default function MyJourney() {
   useGSAP(() => {
     const ctx = gsap.context(() => { // React
       
-      gsap.killTweensOf([imageContainerRef.current, textContainerRef.current, backRef.current]) // clean
+      gsap.killTweensOf([journeyRef.current, imageContainerRef.current, textContainerRef.current, backRef.current]) // clean
 
+      gsap.set( journeyRef.current, {
+        top: '0%',
+        left: '0%',
+        opacity: 0
+      })
+      
       gsap.set( backRef.current, {
+        scale: 0.5,
+        opacity: 0,
         top: '50%',
         left: '50%',
         y: 0
@@ -42,13 +50,14 @@ export default function MyJourney() {
       })
 
       tl // ANIMATIONS
-        .fromTo( backRef.current,{
-          scale: 0,
-          opacity: 0,
-        }, {
+        .to(journeyRef.current, {
+          opacity: 1,
+          duration: 0.1
+        })
+        .to( backRef.current, {
           opacity: 1,
           duration: 2
-        }, '<')
+        })
         .to( backRef.current, {
           scale: 1,
           duration: 4,
@@ -101,7 +110,7 @@ export default function MyJourney() {
     <section
       ref={journeyRef}
       id="journey"
-      className="min-h-screen flex items-center justify-center bg-transparent relative z-10"
+      className="h-screen flex items-center justify-center bg-transparent relative z-10"
     >
       <div
         ref={backRef}

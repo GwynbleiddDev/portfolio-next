@@ -1,32 +1,29 @@
 
 /* ========================== VARIABLES ======================== */
 :root {
-    --labs-sys-color-background: #111;
-    --labs-sys-color-on-background: white;
+    --black-background: #1a1a1a;
+    --white-color: rgb(240, 240, 240);
     --base-speed: 6s;
-    --labs-sys-color-grid: #00b7ff;
-    --labs-sys-color-grid-glow: #ff007a;
-    --labs-sys-color-sun-1: #00b7ff;
-    --labs-sys-color-sun-2: #ff007a;
-    --labs-sys-color-sun-glow: #b300ff;
-    --labs-sys-color-star: #ff007a;
-    --color-palm-trunk: #333;
-    --color-palm-leaf: #333;
-    --color-palm-leaf-2: #b300ff;
-    --labs-sys-color-triangle: #00b7ff;
+    --color-floor: #00b7ff;
+    --color-floor-glow: #ff007a;
+    --color-sun-1: #00b7ff;
+    --color-sun-2: #ff007a;
+    --color-sun-glow: #b300ff;
+    --color-stars: #b3b9f8;
+    --color-palm: #333;
+    --color-startail-glow: #00b7ff;
 }
 
 /* ============ GLOBALES ============== */
 body {
     overflow-y: auto;
     min-height: 100vh;
-    background-color: var(--labs-sys-color-background);
-    color: var(--labs-sys-color-on-background);
+    background-color: var(--black-background);
+    color: var(--white-color);
 }
 
 section {
     min-height: 100vh;
-    width: 100%;
 }
 
 section, main {
@@ -63,4 +60,14 @@ li {
     li {
         padding: .5rem 2.6rem;
     }
+}
+
+.arrow {
+    animation: arrow-down 1s linear infinite;
+}
+
+@keyframes arrow-down {
+    0%   { transform: translateY(0) }
+    50%  { transform: translateY(0.25rem) }
+    100% { transform: translateY(0) }
 }

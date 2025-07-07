@@ -5,7 +5,6 @@ import { useLenis } from 'lenis/react';
 import NavOverlay from '../extras/NavOverlay';
 import NavToggle from './NavToggle';
 import NavMenu from './NavMenu';
-// import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import { useActiveSection } from '@/hooks/useActiveSection';
 import HeroToggle from './HeroToggle';
 
@@ -50,13 +49,15 @@ export default function NavBar() {
 
   return (
     <>
-      <NavOverlay
-        isOpen={open}
-        isOpening={isAnimating === 'opening'}
-        isClosing={isAnimating === 'closing'}
-      />
       <header>
+        <NavOverlay
+          isOpen={open}
+          isOpening={isAnimating === 'opening'}
+          isClosing={isAnimating === 'closing'}
+        />
+
         <NavToggle isOpen={open} onToggle={open ? handleClose : handleOpen} />
+        
         <NavMenu
           isOpen={open}
           activeSection={activeSection}
@@ -66,8 +67,6 @@ export default function NavBar() {
 
         <HeroToggle isOpen={open} />
       </header>
-
-      {/* <ChevronDownIcon className="h-12 w-12 text-indigo-200 absolute bottom-0 left-1/2" /> */}
     </>
   )
 }

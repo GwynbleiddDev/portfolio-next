@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${rajdhani.className} antialiased`}
+        className={`${rajdhani.className} overflow-x-hidden antialiased`}
       >
         <LenisProvider>{children}</LenisProvider>
       </body>

@@ -38,7 +38,6 @@ export default function NavMenu({ isOpen, activeSection, setActiveSection, onClo
         
         {navItems.map((item) => (
           <li key={item.id}>
-            
             <NavButton
               href={item.href}
               id={item.id}

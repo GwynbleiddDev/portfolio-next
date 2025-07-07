@@ -27,9 +27,10 @@ export default function Background() {
         
         <div className="top">
           <div className="startails">
-            <div className="startail-r"></div>
-            <div className="startail-l"></div>
-            <div className="startail-m"></div>
+            <div className="startail-a"></div>
+            <div className="startail-b"></div>
+            <div className="startail-c"></div>
+            <div className="startail-d"></div>
           </div>
           
           <div className="top-lines"></div>

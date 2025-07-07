@@ -112,7 +112,7 @@ export default function Skills() {
     <section
       id="skills"
       ref={skillRef}
-      className="min-h-screen flex items-center bg-transparent relative z-10 p-7"
+      className="min-h-screen flex items-center bg-transparent relative z-10 p-7 overflow-hidden"
     >
       <div
         ref={backRef}
