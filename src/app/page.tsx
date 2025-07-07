@@ -51,8 +51,8 @@ export default function Home() {
 
     // Hide ChevronDownIcon when Contact section is in view
     const handleScroll = () => {
-      const contactSection = document.getElementById('contact')
-      const chevron = document.getElementById('chevron-down-icon')
+      const contactSection = contactRef.current
+      const chevron = chevronRef.current
       if (contactSection && chevron) {
       const rect = contactSection.getBoundingClientRect()
       const inView = rect.top < window.innerHeight && rect.bottom > 0
@@ -80,28 +80,28 @@ export default function Home() {
       > 
         <Background />
         <NavBar />
-
-        <Hero
-          ref={heroRef} 
-        />
-        <div className="h-[50vh]"/>
-        <AboutMe
-          ref={aboutRef} 
-        />
-        <div className="h-[25vh]"/>
-        <Skills 
-          ref={skillsRef} 
-        />
-        <MyJourney
-          ref={journeyRef}
-        />
-        <Projects 
-          ref={projectsRef} 
-        />
-        <div className="h-[60vh]"/> 
-        <Contact
-          ref={contactRef}
-        />
+        
+        <div ref={heroRef}>
+          <Hero />
+          <div className="h-[50vh]" />
+        </div>
+        <div ref={aboutRef}>
+          <AboutMe />
+          <div className="h-[25vh]" />
+        </div>
+        <div ref={skillsRef}>
+          <Skills />
+        </div>
+        <div ref={journeyRef}>
+          <MyJourney />
+        </div>
+        <div ref={projectsRef}>
+          <Projects />
+          <div className="h-[60vh]" />
+        </div>
+        <div ref={contactRef}>
+          <Contact />
+        </div>
 
         <div 
           ref={chevronRef}

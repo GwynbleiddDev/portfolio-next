@@ -1,6 +1,6 @@
 'use client'
 
-import { RefObject, useRef } from 'react';
+import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -10,7 +10,7 @@ import { useLenisScrollTrigger } from '@/hooks/useLenisScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 
-export default function Hero({ ref }: { ref: RefObject<HTMLElement> }) {
+export default function Hero() {
 
   const heroRef = useRef<HTMLElement>(null)
   const glitchContainerRef = useRef<HTMLDivElement>(null)
