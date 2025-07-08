@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 
-interface NavButtonProps {
+type NavButtonProps = {
   href: string
   id: string
   label: string

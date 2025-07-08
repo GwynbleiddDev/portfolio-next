@@ -18,7 +18,9 @@ type NavMenuProps = {
 }
 
 
-export default function NavMenu({ isOpen, activeSection, setActiveSection, onClose }: NavMenuProps) {
+export default function NavMenu({ 
+  isOpen, activeSection, setActiveSection, onClose } : NavMenuProps
+) {
   
   const navItems: NavItem[] = [
     { href: '#about', id: 'nav-about', label: 'About Me' },

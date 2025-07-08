@@ -1,5 +1,5 @@
 
-export interface Project {
+export type Project = {
   name: string
   link: string
   image: string

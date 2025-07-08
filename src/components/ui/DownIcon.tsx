@@ -2,7 +2,7 @@ import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import { useEffect, useRef } from "react";
 
 
-interface DownIconProps {
+type DownIconProps = {
   contactRef: HTMLDivElement | null;
 }
 

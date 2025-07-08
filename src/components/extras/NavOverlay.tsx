@@ -1,7 +1,7 @@
 'use client'
 
 
-interface NavOverlayProps {
+type NavOverlayProps = {
   isOpen: boolean
   isOpening: boolean
   isClosing: boolean

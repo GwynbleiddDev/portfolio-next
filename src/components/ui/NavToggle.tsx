@@ -5,7 +5,7 @@ import { Bars2Icon } from "@heroicons/react/24/outline";
 
 
 
-interface NavToggleProps {
+type NavToggleProps = {
   isOpen: boolean;
   onToggle: () => void;
 }
