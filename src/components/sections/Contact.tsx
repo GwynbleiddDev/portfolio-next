@@ -34,7 +34,9 @@ export default function Contact() {
       className="min-h-screen flex flex-col items-center justify-center bg-transparent relative z-10 p-4 md:p-7"
     >
 
-      <div className="max-w-6xl mx-auto text-center bg-gray-950/40 p-6 md:p-8 shadow-lg shadow-purple-900/50 border border-purple-900 rounded-lg mb-8 md:mb-20">
+      <div 
+        className="max-w-6xl mx-auto text-center bg-gray-950/40 p-6 md:p-8 shadow-lg shadow-purple-900/50 border border-purple-900 rounded-lg mb-8 md:mb-20"
+      >  
         <Heading 
           color="text-purple-400" 
           mb="mb-6 md:mb-8">

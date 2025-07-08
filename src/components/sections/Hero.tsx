@@ -24,23 +24,6 @@ export default function Hero() {
 
       gsap.killTweensOf([glitchContainerRef.current, subtitleContainerRef.current, backRef.current]) // clean prev animations
 
-      // PREV STATES
-      gsap.set(glitchContainerRef.current, {
-        scale: 4,
-        opacity: 0,
-        y: -15,
-      })
-      
-      gsap.set(subtitleContainerRef.current, {
-        left: '50%',
-        top: '50%',
-        y: 5,
-      })
-
-      gsap.set([subtitleContainerRef.current, backRef.current], {
-        opacity: 0,
-      })
-
       const tl = gsap.timeline({ 
         pin: heroRef.current,
         scrollTrigger: {
@@ -54,6 +37,12 @@ export default function Hero() {
         },
       })
 
+      // PREV
+      gsap.set(glitchContainerRef.current, {
+        scale: 4,
+        opacity: 0,
+      })
+      
       tl // ANIMATIONS
         .to( glitchContainerRef.current, { 
             scale: 1, 
@@ -63,12 +52,17 @@ export default function Hero() {
           opacity: 1,
           duration: 0.3 
         }, 0.15)
-        .to( subtitleContainerRef.current, { 
+        .fromTo( subtitleContainerRef.current, {
+          opacity: 0,
+          y: 5
+        },{ 
           opacity: 1, 
           y: -10, 
           duration: 0.3 
         }, 1.6 )
-        .to( backRef.current, { 
+        .fromTo( backRef.current, {
+          opacity: 0,
+        },{ 
             opacity: 1,
             duration: 0.2 
           }, 1.9 )
@@ -99,12 +93,6 @@ export default function Hero() {
     return () => ctx.revert() // clean
   }, { dependencies: [scroller], scope: heroRef })
 
-  // const [scrollY, setScrollY] = useState(0);
-
-  // useEffect(() => {
-  //   // Solo ejecuta en el cliente
-  //   const handleScroll = () => {
-  //     setScrollY(window.scrollY);
   return (
     <section
       id="hero"
@@ -113,10 +101,10 @@ export default function Hero() {
     >
       <div
         ref={backRef}
-        className="absolute bg-gray-950/50 rounded-2xl p-2 shadow-purple-900/90 border-1 border-purple-900"
+        className="absolute bg-gray-950/50 rounded-2xl px-2 md:p-2 shadow-purple-900/90 border-1 border-purple-900"
       >
-        <div className="title flex flex-col justify-center items-center">
-          <h1 className="glitchSim opacity-0 mt-1">ALEJANDRO_VALERA</h1>
+        <div className="flex flex-col justify-center items-center">
+          <h1 className="glitchSim opacity-0 title">ALEJANDRO_VALERA</h1>
           <p className="subSim opacity-0">front-end developer</p>
         </div>
       </div>

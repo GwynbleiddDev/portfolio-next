@@ -21,6 +21,7 @@
 
 .glitchSim {
   font-size: 2.65rem;
+  margin-bottom: -0.5rem;
 }
 
 @media (min-width: 768px) {
@@ -57,6 +58,7 @@
 }
 
 .subtitle {
+  margin-top: 0.4rem;
   font-style: normal;
   font-weight: 700;
   font-size: 1.06rem;
@@ -67,15 +69,14 @@
 
 @media (min-width: 768px) {
   .subtitle {
+    margin-top: 0.6rem;
     letter-spacing: 1.2em;
     font-size: 1.1rem;
   }
 }
 
 .subSim {
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 1.05rem;
+  font-size: 1rem;
   letter-spacing: .25em;
 }
 

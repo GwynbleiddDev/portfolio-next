@@ -22,21 +22,7 @@ export default function MyJourney() {
     const ctx = gsap.context(() => { // React
       
       gsap.killTweensOf([journeyRef.current, imageContainerRef.current, textContainerRef.current, backRef.current]) // clean
-
-      gsap.set( journeyRef.current, {
-        top: '0%',
-        left: '0%',
-        opacity: 0
-      })
       
-      gsap.set( backRef.current, {
-        scale: 0.5,
-        opacity: 0,
-        top: '50%',
-        left: '50%',
-        y: 0
-      })
-
       const tl = gsap.timeline({
         ease: 'power2.out',
         scrollTrigger: {
@@ -50,11 +36,13 @@ export default function MyJourney() {
       })
 
       tl // ANIMATIONS
-        .to(journeyRef.current, {
-          opacity: 1,
-          duration: 0.1
-        })
-        .to( backRef.current, {
+        .fromTo( backRef.current, {
+          scale: 0.5,
+          opacity: 0,
+          top: '50%',
+          left: '50%',
+          y: 0
+        }, {
           opacity: 1,
           duration: 2
         })

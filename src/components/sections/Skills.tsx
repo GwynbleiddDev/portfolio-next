@@ -23,23 +23,6 @@ export default function Skills() {
 
       gsap.killTweensOf([skillRef.current, backRef.current, cardRef.current]) // clean
 
-      gsap.set( backRef.current, {
-        opacity: 0,
-        scale: 1.1,
-        maskImage: `
-          radial-gradient(
-            circle at 50% 150%, 
-            rgb(0, 0, 0) 0%, 
-            rgba(0, 0, 0, 0) 10%
-          )
-        `,
-      })
-
-      gsap.set( cardRef.current, {
-        opacity: 0,
-        y: 10
-      })
-
       const tl = gsap.timeline({
         ease: 'power2.out',
         scrollTrigger: {
@@ -53,7 +36,17 @@ export default function Skills() {
       })
 
       tl
-        .to( backRef.current, {
+        .fromTo( backRef.current, {
+          opacity: 0,
+          scale: 1.1,
+          maskImage: `
+            radial-gradient(
+              circle at 50% 150%, 
+              rgb(0, 0, 0) 0%, 
+              rgba(0, 0, 0, 0) 10%
+            )
+          `,
+        },{
           scale: 1,
           duration: 30
         })
@@ -67,7 +60,10 @@ export default function Skills() {
           )`,
           duration: 5,
         }, '<' )
-        .to( cardRef.current, {
+        .fromTo( cardRef.current, {
+            opacity: 0,
+            y: 10
+          },{
           opacity: 1,
           y: 0,
           stagger: {
@@ -75,8 +71,7 @@ export default function Skills() {
             from: 'start',
           },
           duration: 1,
-        },
-        5 )
+        }, 5 )
         .to( 
           backRef.current,
           {

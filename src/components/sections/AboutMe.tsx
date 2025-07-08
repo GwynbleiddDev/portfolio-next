@@ -25,17 +25,17 @@ export default function AboutMe() {
       
       gsap.killTweensOf([cityContainerRef.current, textContainerRef.current, backRef.current]) // clean
 
-      gsap.set( backRef.current, {
-        scale: 1.1,
-        opacity: 0,
-        maskImage: `
-          radial-gradient(
-            circle at 50% 150%, 
-            rgb(0, 0, 0) 0%, 
-            rgba(0, 0, 0, 0) 10%
-          )
-        `,
-      })
+      // gsap.set( backRef.current, {
+      //   scale: 1.1,
+      //   opacity: 0,
+      //   maskImage: `
+      //     radial-gradient(
+      //       circle at 50% 150%, 
+      //       rgb(0, 0, 0) 0%, 
+      //       rgba(0, 0, 0, 0) 10%
+      //     )
+      //   `,
+      // })
       
       const tl = gsap.timeline({
         ease: 'power2.out',
@@ -51,7 +51,17 @@ export default function AboutMe() {
       })
 
       tl // ANIMATIONS
-        .to( backRef.current, {
+        .fromTo( backRef.current, {
+          scale: 1.1,
+          opacity: 0,
+          maskImage: `
+            radial-gradient(
+              circle at 50% 150%, 
+              rgb(0, 0, 0) 0%, 
+              rgba(0, 0, 0, 0) 10%
+            )
+          `,
+        },{
           opacity: 1,
           maskImage: `
             radial-gradient(

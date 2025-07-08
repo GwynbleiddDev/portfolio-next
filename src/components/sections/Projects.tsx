@@ -23,23 +23,6 @@ export default function Projects() {
 
       gsap.killTweensOf([projectsRef.current, backRef.current]) // clean
 
-      gsap.set( backRef.current, {
-        opacity: 0,
-        scale: 1,
-        maskImage: `
-          radial-gradient(
-            circle at 50% 150%, 
-            rgb(0, 0, 0) 0%, 
-            rgba(0, 0, 0, 0) 10%
-          )
-        `,
-      })
-
-      gsap.set( cardRef.current, {
-        opacity: 0,
-        y: 10
-      })
-
       const tl = gsap.timeline({
         ease: 'power2.out',
         scrollTrigger: {
@@ -53,7 +36,17 @@ export default function Projects() {
       })
 
       tl
-        .to( backRef.current, {
+        .fromTo( backRef.current, {
+          opacity: 0,
+          scale: 1,
+          maskImage: `
+            radial-gradient(
+              circle at 50% 150%, 
+              rgb(0, 0, 0) 0%, 
+              rgba(0, 0, 0, 0) 10%
+            )
+          `,
+        }, {
           scale: 0.9,
           duration: 30
         })
@@ -67,16 +60,18 @@ export default function Projects() {
           )`,
           duration: 5,
         }, '<' )
-        .to( cardRef.current, {
+        .fromTo( cardRef.current, {
+          opacity: 0,
+          y: 10
+        },{
           opacity: 1,
           y: 0,
           stagger: {
-            each: 0.6, 
+            each: 1, 
             from: 'start',
           },
-          duration: 1,
-        },
-        5 )
+          duration: 3,
+        }, 5 )
         .to( 
           backRef.current,
           {
@@ -99,8 +94,8 @@ export default function Projects() {
                 rgba(0, 0, 0) 110%
               )
             `,
-            duration: 5
-          }, 26
+            duration: 16
+          }, 30
         )
 
     }, projectsRef )
