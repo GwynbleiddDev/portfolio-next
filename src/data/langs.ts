@@ -5,7 +5,7 @@ const langs = {
       text: "I am a front-end developer in training, passionate about creating modern and responsive interfaces. Through intensive courses, I have learned languages like JavaScript and TypeScript, frameworks like React and Next.js, and technologies like Tailwind, and I am ready to begin to apply them.",
     },
     skills: {
-      title: "Skills/Tools",
+      title: "Skills / Tools",
     },
     journey: {
       title: "My Journey",
