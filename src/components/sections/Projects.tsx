@@ -105,20 +105,20 @@ export default function Projects() {
   }, { dependencies: [ scroller ], scope: projectsRef })
 
   const { t } = useLanguage()
-  const translatedCard = projects.map((project) => {
-    if (project.type === 'redes') {
-      return {
-        ...project,
-        name:
-          project.name === 'Github Repositories'
-            ? t.projects.github
-            : project.name === 'Projects Deployments'
-            ? t.projects.netlify
-            : project.name,
-      };
-    }
-    return project;
-  });
+  // const translatedCard = projects.map((project) => {
+  //   if (project.type === 'redes') {
+  //     return {
+  //       ...project,
+  //       name:
+  //         project.name === 'Github Repositories'
+  //           ? t.projects.github
+  //           : project.name === 'Projects Deployments'
+  //           ? t.projects.netlify
+  //           : project.name,
+  //     };
+  //   }
+  //   return project;
+  // });
 
   return (
     <section
@@ -137,7 +137,7 @@ export default function Projects() {
         <div
           className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3"
         >
-          {translatedCard.map((project, i) => (
+          {projects.map((project, i) => (
             <ProjectCard 
               key={project.name}
               name={project.name}

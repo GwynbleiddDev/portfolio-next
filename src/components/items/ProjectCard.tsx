@@ -22,27 +22,27 @@ export default forwardRef( function ProjectCard(
       <h3 
         className="text-[1.05rem] md:text-xl font-semibold text-indigo-300"
       >{name}</h3>
-            <a 
-            href={link} 
-            target="_blank"
-            >
-            <Image 
-              className="w-20 md:w-35 my-2 rounded-lg" 
-              src={
-              type === "redes"
-                ? `/assets/redes/${image}.svg`
-                : `/assets/projects/${image}.png`
-              }
-              alt="imagen proyecto"
-              width={150}
-              height={100}
-            />
-            </a>
-          <p className="text-white text-sm">
-            {
-              type === 'redes' ? '' : type
-            }
-          </p>
+        <a 
+        href={link} 
+        target="_blank"
+        >
+        <Image 
+          className="w-20 md:w-35 my-2 rounded-lg" 
+          src={
+          type === "redes"
+            ? `/assets/redes/${image}.svg`
+            : `/assets/projects/${image}.png`
+          }
+          alt="imagen proyecto"
+          width={150}
+          height={100}
+        />
+        </a>
+      <p className="text-white text-sm">
+        {
+          type === 'redes' ? '' : type
+        }
+      </p>
     </div>
   )
 })
