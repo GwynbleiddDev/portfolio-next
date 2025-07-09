@@ -43,6 +43,7 @@ export const useStars = (starCount: number, heightRatio: number) => {
       if (starRef) {
         gsap.to(starRef, {
           opacity: 1,
+          scale: 0.5 + Math.random() * 0.5,
           duration: 2 + Math.random() * 4, 
           delay: Math.random() * 3, 
           ease: 'sine.inOut', 
