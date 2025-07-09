@@ -40,6 +40,7 @@ export default function Background() {
             className="palm small"
             width={100}
             height={150}
+            priority
           />
 
           <Image
@@ -48,6 +49,7 @@ export default function Background() {
             className="palm"
             width={150}
             height={200}
+            priority
           />
         </div>
 

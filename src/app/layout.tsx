@@ -12,6 +12,9 @@ const rajdhani = Rajdhani({
 export const metadata: Metadata = {
   title: "Alejandro Valera Web Developer - Portfolio",
   description: "Alejandro Valera Web Developer - Portfolio",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
