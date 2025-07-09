@@ -6,7 +6,7 @@ import { useStars } from '@/hooks/useStars';
 
 export default function Background() {
   
-  const { stars, starRefs } = useStars(50, 0.7);
+  const { stars, starRefs } = useStars(60, 0.7);
 
   return (
     <>

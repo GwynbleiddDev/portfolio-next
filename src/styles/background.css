@@ -74,6 +74,7 @@
     bottom: 0%;
     left: 50%;
     transform: translateX(-50%);
+    filter: drop-shadow(0 0 2.5rem var(--color-sun-glow));
 }
 
 .sun:after {
@@ -95,9 +96,9 @@
     transparent calc(49% + (2.8% * var(--shift))), 0%,
     #000 calc(50% + (6.5% * var(--shift))), 0%, 
     transparent calc(56% + (2.8% * var(--shift))), 0%, 
-    #000 calc(57% + (2.5% * var(--shift))));  */
+    #000 calc(57% + (2.5% * var(--shift))));  
     mask-size: 100% 120%;
-    animation: sun calc(var(--base-speed) / 1.5) linear infinite; 
+    animation: sun calc(var(--base-speed) / 1.5) linear infinite; */
     border-radius: inherit;
     background-image: linear-gradient(to bottom, var(--color-sun-1), var(--color-sun-2) 45%);
 } 
@@ -112,9 +113,7 @@
     perspective: 6.25rem;
     filter: blur(1.25rem);
 }
-.sun {
-    filter: drop-shadow(0 0 3rem var(--color-sun-glow));
-}
+
 
 /* @keyframes sun {
     from { --shift: 1; }
@@ -308,9 +307,9 @@
     height: 0.2vmin;
     width: 9vmin;
     border-radius: 50%;
-    filter: drop-shadow(0 0 0.95rem var(--color-sun-glow));
+    filter: drop-shadow(0 0 1rem var(--color-sun-glow));
     /* transform: translateY(-32vmin) rotate(-20deg); */
-    animation: startail 20s linear infinite;
+    animation: startail 15s linear infinite ;
 }
 
 .startail-b {
@@ -321,9 +320,9 @@
     height: 0.2vmin;
     width: 13vmin;
     border-radius: 50%;
-    filter: drop-shadow(0 0 0.95rem var(--color-sun-glow));
+    filter: drop-shadow(0 0 1rem var(--color-sun-glow));
     /* transform: translateY(-32vmin) rotate(-20deg); */
-    animation: startail 30s linear infinite;
+    animation: startail 20s linear infinite;
 }
 
 .startail-c {
@@ -334,9 +333,9 @@
     height: 0.2vmin;
     width: 28vmin;
     border-radius: 50%;
-    filter: drop-shadow(0 0 0.95rem var(--color-sun-glow));
+    filter: drop-shadow(0 0 1rem var(--color-sun-glow));
     /* transform: translateY(-7vmin) rotate(-20deg); */
-    animation: startail 40s linear infinite;
+    animation: startail 25s linear infinite;
 }
 
 .startail-d {
@@ -347,9 +346,9 @@
     height: 0.2vmin;
     width: 14vmin;
     border-radius: 50%;
-    filter: drop-shadow(0 0 0.95rem var(--color-sun-glow));
+    filter: drop-shadow(0 0 1rem var(--color-sun-glow));
     /* transform: translateY(-18vmin) rotate(-20deg); */
-    animation: startail 50s linear infinite;
+    animation: startail 30s linear infinite;
 }
 
 .startail-e {
@@ -360,9 +359,9 @@
     height: 0.2vmin;
     width: 14vmin;
     border-radius: 50%;
-    filter: drop-shadow(0 0 0.95rem var(--color-sun-glow));
+    filter: drop-shadow(0 0 1rem var(--color-sun-glow));
     /* transform: translateY(-18vmin) rotate(-20deg); */
-    animation: startail 60s linear infinite;
+    animation: startail 35s linear infinite;
 }
 
 
@@ -372,11 +371,14 @@
         transform:scale(0) rotate(-20deg) translate3d(0, 0, 0);
     }
     50% {
-        opacity:1;
-        transform:scale(0.5) rotate(-20deg) translate3d(-5rem, 0, 0);
+        opacity: 0.9;
+        transform:scale(.5) rotate(-20deg) translate3d(-4rem, 0, 0);
+    }
+    95% {
+        opacity: 0.9;
     }
     100% {
         opacity:0;
-        transform:scale(1) rotate(-20deg) translate3d(-10rem, 0, 0);
+        transform:scale(1) rotate(-20deg) translate3d(-8rem, 0, 0);
     }
 }
