@@ -6,6 +6,7 @@ import { useLenisScrollTrigger } from '@/hooks/useLenisScrollTrigger';
 import { skills } from "@/data/skills";
 import SkillCard from "../items/SkillCard";
 import Heading from "../ui/Heading";
+import { useLanguage } from '@/context/LanguageContext';
 
 
 gsap.registerPlugin(ScrollTrigger)
@@ -103,9 +104,10 @@ export default function Skills() {
     return () => ctx.revert() // clean
   }, { dependencies: [ scroller ], scope: skillRef })
 
+  const { t } = useLanguage()
+
   return (
     <section
-      id="skills"
       ref={skillRef}
       className="min-h-screen flex items-center bg-transparent relative z-10 p-7 overflow-hidden"
     >
@@ -117,7 +119,7 @@ export default function Skills() {
         <Heading
           color="text-indigo-400"
           mb="mb-8"
-        >Skills</Heading>
+        >{t.skills.title}</Heading>
 
         <div
           className="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-10 gap-6 md:gap-12 mx-auto"

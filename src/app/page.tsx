@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, RefObject } from "react";
 import LoadingPage from "@/components/extras/LoadingPage";
 import Background from "@/components/sections/Background";
 import NavBar from "@/components/ui/NavBar";
@@ -49,16 +49,41 @@ export default function Home() {
         }`}
       > 
         <Background />
-        <NavBar />
+        <NavBar
+          heroRef={heroRef}
+          aboutRef={aboutRef}
+          skillsRef={skillsRef}
+          journeyRef={journeyRef}
+          projectsRef={projectsRef}
+          contactRef={contactRef}
+        />
         
-        <div ref={heroRef}> <Hero /> <div className="h-[50vh]" /> </div>
-        <div ref={aboutRef}> <AboutMe /> <div className="h-[25vh]" /> </div>
-        <div ref={skillsRef}> <Skills /> </div>
-        <div ref={journeyRef}> <MyJourney /> </div>
-        <div ref={projectsRef}> <Projects /> <div className="h-[60vh]" /> </div>
-        <div ref={contactRef}> <Contact /> </div> 
+        <div 
+          id='hero' 
+          ref={heroRef}
+        > <Hero /> <div className="h-[50vh]"/> </div> 
+        <div 
+          id="about" 
+          ref={aboutRef}
+        > <AboutMe /> <div className="h-[30vh]"/> </div>
+        <div 
+          id="skills" 
+          ref={skillsRef}
+        > <Skills /> <div className="h-[30vh]"/> </div>
+        <div 
+          id="journey" 
+          ref={journeyRef}
+        > <MyJourney /> <div className="h-[30vh]"/> </div>
+        <div 
+          id="projects" 
+          ref={projectsRef}
+        > <Projects /> <div className="h-[50vh]"/> </div>
+        <div 
+          id="contact" 
+          ref={contactRef}
+        > <Contact /> </div> 
         
-        <DownIcon contactRef={contactRef.current} />
+        <DownIcon contactRef={contactRef as RefObject<HTMLDivElement | null>} />
       </div>
     </>
   )

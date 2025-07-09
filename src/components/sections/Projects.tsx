@@ -6,6 +6,7 @@ import { useLenisScrollTrigger } from "@/hooks/useLenisScrollTrigger";
 import ProjectCard from "../items/ProjectCard"
 import { projects } from "@/data/projects"
 import Heading from "../ui/Heading"
+import { useLanguage } from "@/context/LanguageContext";
 
 
 gsap.registerPlugin(ScrollTrigger)
@@ -103,10 +104,25 @@ export default function Projects() {
     return () => ctx.revert() // clean
   }, { dependencies: [ scroller ], scope: projectsRef })
 
+  const { t } = useLanguage()
+  const translatedCard = projects.map((project) => {
+    if (project.type === 'redes') {
+      return {
+        ...project,
+        name:
+          project.name === 'Github Repositories'
+            ? t.projects.github
+            : project.name === 'Projects Deployments'
+            ? t.projects.netlify
+            : project.name,
+      };
+    }
+    return project;
+  });
+
   return (
     <section
       ref={projectsRef}
-      id="projects"
       className="min-h-screen flex items-center p-4 md:p-6 bg-transparent relative z-10 overflow-hidden"
     >
       <div
@@ -116,13 +132,12 @@ export default function Projects() {
           <Heading
             color="text-indigo-400"
             mb="mb-6"
-          >Projects</Heading>
+          >{t.projects.title}</Heading>
 
         <div
-          id="projectGrid"
           className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3"
         >
-          {projects.map((project, i) => (
+          {translatedCard.map((project, i) => (
             <ProjectCard 
               key={project.name}
               name={project.name}

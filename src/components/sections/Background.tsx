@@ -55,9 +55,6 @@ export default function Background() {
         </div>
         
         <div className="bottom">
-          <div className="m0"></div>
-          <div className="m1"></div>
-          <div className="m2"></div>
           <div className="bottom-overlay"></div>
         </div>
       

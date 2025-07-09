@@ -1,9 +1,9 @@
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
-import { useEffect, useRef } from "react";
+import { RefObject, useEffect, useRef } from "react";
 
 
 type DownIconProps = {
-  contactRef: HTMLDivElement | null;
+  contactRef: RefObject<HTMLDivElement | null>
 }
 
 export default function DownIcon({ contactRef }: DownIconProps) {
@@ -12,8 +12,8 @@ export default function DownIcon({ contactRef }: DownIconProps) {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (contactRef && chevronRef.current) {
-        const rect = contactRef.getBoundingClientRect();
+      if (contactRef.current && chevronRef.current) {
+        const rect = contactRef.current.getBoundingClientRect();
         const inView = rect.top < window.innerHeight && rect.bottom > 0;
         chevronRef.current.style.opacity = inView ? '0' : '1';
       }

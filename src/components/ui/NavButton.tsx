@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 
+
 type NavButtonProps = {
   href: string
   id: string
@@ -10,13 +11,7 @@ type NavButtonProps = {
   onClick: () => void
 }
 
-
 export default function NavButton({ href, id, label, isActive, onClick }: NavButtonProps) {
-  
-  const handleClick = () => {
-    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' })
-    onClick()
-  }
 
   return (
     <Link
@@ -27,7 +22,10 @@ export default function NavButton({ href, id, label, isActive, onClick }: NavBut
           ? 'text-indigo-200 cursor-not-allowed'
           : 'text-indigo-400 hover:text-indigo-200'
       }`}
-      onClick={handleClick}
+      onClick={(e) => {
+        e.preventDefault()
+        onClick()
+      }}
     >
       {label}
     </Link>

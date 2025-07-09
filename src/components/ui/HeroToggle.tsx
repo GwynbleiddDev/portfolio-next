@@ -1,9 +1,29 @@
+"use client"
+
+import { useScrollToSection } from "@/hooks/useScrollToSection";
+import { RefObject } from "react";
 
 
-export default function HeroToggle({ isOpen }: {isOpen : boolean}) {
-  
+type HeroToggleProps = {
+  isOpen: boolean;
+  heroRef: RefObject<HTMLDivElement | null>;
+  setActiveSection: (href: string, isManual?: boolean) => void;
+}
+
+export default function HeroToggle({ 
+  isOpen, heroRef, setActiveSection }: HeroToggleProps
+){
+  const scrollToSection = useScrollToSection()
+
   const handleClick = () => {
-    window.scrollTo({ top: 600, behavior: 'smooth' })
+    if(heroRef.current) {
+      scrollToSection({
+        sectionRef: heroRef,
+        href: '#hero',
+        offset: 500,
+        setActiveSection,
+      })
+    }
   }
 
   return (

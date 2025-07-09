@@ -13,6 +13,7 @@ export default forwardRef( function ProjectCard(
   {name, link, image, type}: ProjectCardProps,
   ref: Ref<HTMLDivElement>
 ) {
+
   return (
     <div
       ref={ref}

@@ -5,6 +5,7 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useLenisScrollTrigger } from '@/hooks/useLenisScrollTrigger';
+import { useLanguage } from "@/context/LanguageContext";
 
 
 gsap.registerPlugin(ScrollTrigger)
@@ -94,10 +95,11 @@ export default function MyJourney() {
     return () => ctx.revert() // clean
   }, { dependencies: [ scroller ], scope: journeyRef })
 
+  const { t } = useLanguage()
+
   return (
     <section
       ref={journeyRef}
-      id="journey"
       className="h-screen flex items-center justify-center bg-transparent relative z-10"
     >
       <div
@@ -125,14 +127,10 @@ export default function MyJourney() {
           <Heading
             color="text-blue-500"
             mb="mb-6"
-          >My Journey</Heading>
+          >{t.journey.title}</Heading>
 
           <p className="text-lg text-gray-300">
-            I completed courses on platforms like Udemy where I learned to build
-            web applications from scratch. I mastered creating responsive
-            websites, languages like JavaScript and Typescript, Frameworks like React and Nextjs 
-            and building databases with MySQL and connecting APIs.
-            Currently, I am exploring Next.js and Nest.js to expand my skills.
+            {t.journey.text}
           </p>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Heading from '../ui/Heading';
 import Footer from './Footer';
+import { useLanguage } from '@/context/LanguageContext';
 
 
 export default function Contact() {
@@ -28,9 +29,10 @@ export default function Contact() {
     },
   ];
 
+  const { t } = useLanguage()
+
   return (
-    <div
-      id="contact"
+    <footer
       className="min-h-screen flex flex-col items-center justify-center bg-transparent relative z-10 p-4 md:p-7"
     >
 
@@ -40,7 +42,7 @@ export default function Contact() {
         <Heading 
           color="text-purple-400" 
           mb="mb-6 md:mb-8">
-          Contact
+          {t.contact.title}
         </Heading>
 
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 md:gap-12 lg:gap-16">
@@ -64,6 +66,6 @@ export default function Contact() {
       </div>
 
       <Footer />
-    </div>
+    </footer>
   );
 }

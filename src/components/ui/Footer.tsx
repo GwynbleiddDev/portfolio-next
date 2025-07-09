@@ -16,7 +16,7 @@ export default function Footer() {
           className="text-indigo-400 hover:text-indigo-200 text-sm md:text-base transition-colors duration-300 flex items-center gap-2"
         >
           <ArrowDownCircleIcon className="h-6 w-6 md:h-7 md:w-7 text-gray-200" />
-          <p id="text-cv">Download my CV (PDF)</p>
+          <p>Download my CV (PDF)</p>
         </a>
         <span className="text-gray-400 text-xs md:text-sm italic">
           Powered by retro-futuristic vibes

@@ -25,7 +25,7 @@ export const skills: Skill[] = [
     image: 'react'
   },
   {
-    name: 'NextJs',
+    name: 'Next.js',
     image: 'nextjs'
   },
   {

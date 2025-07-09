@@ -7,6 +7,7 @@ import City from '../extras/City';
 import Heading from '../ui/Heading';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useLenisScrollTrigger } from '@/hooks/useLenisScrollTrigger';
+import { useLanguage } from '@/context/LanguageContext';
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -129,9 +130,10 @@ export default function AboutMe() {
     return () => ctx.revert() // clean
   }, { dependencies: [ scroller ], scope: aboutRef })
 
+  const { t } = useLanguage()
+
   return (
     <section
-      id="about"
       ref={aboutRef}
       className="min-h-screen flex justify-center items-center bg-transparent relative z-10"
     >
@@ -144,12 +146,10 @@ export default function AboutMe() {
           className="md:w-1/3 text-center md:text-left"
         >
           <Heading color="text-purple-400" mb="mb-8">
-            About Me
+            {t.about.title}
           </Heading>
           <p className="text-lg text-gray-300">
-            I am a front-end developer in training, passionate about creating modern and responsive
-            interfaces. Through intensive courses, I have mastered languages like JavaScript and
-            TypeScript and technologies like Tailwind, and I am ready to apply them in real projects.
+            {t.about.text}
           </p>
         </div>
 
