@@ -1,18 +1,21 @@
-import { useState, useEffect, useCallback } from 'react'
+'use client';
 
+import { useState, useEffect, useCallback, useRef } from 'react';
+import { gsap } from 'gsap';
 
 export type Star = {
   id: number;
   x: number;
   y: number;
-}
+};
 
 export const useStars = (starCount: number, heightRatio: number) => {
   
   const [ stars, setStars ] = useState<Star[]>([])
+  const starRefs = useRef<(HTMLDivElement | null)[]>([])
 
   const createStars = useCallback(() => {
-    const width = typeof window !== 'undefined' ? window.innerWidth : 1920;
+    const width = typeof window !== 'undefined' ? window.innerWidth : 1920
     const height = typeof window !== 'undefined' ? window.innerHeight * heightRatio : 1080 * heightRatio
     const newStars: Star[] = []
 
@@ -21,10 +24,10 @@ export const useStars = (starCount: number, heightRatio: number) => {
         id: i,
         x: Math.floor(Math.random() * width),
         y: Math.floor(Math.random() * height),
-      })
+      });
     }
 
-    setStars(newStars)
+    setStars(newStars);
   }, [starCount, heightRatio])
 
   useEffect(() => {
@@ -34,5 +37,30 @@ export const useStars = (starCount: number, heightRatio: number) => {
     return () => window.removeEventListener('resize', updateStars)
   }, [createStars])
 
-  return stars
-}
+  useEffect(() => {
+    const currentStarRefs = starRefs.current
+    currentStarRefs.forEach((starRef) => {
+      if (starRef) {
+        gsap.to(starRef, {
+          opacity: 1,
+          duration: 2 + Math.random() * 4, 
+          delay: Math.random() * 3, 
+          ease: 'sine.inOut', 
+          repeat: -1, 
+          yoyo: true, 
+          repeatDelay: Math.random() * 3,
+        })
+      }
+    })
+
+    return () => {
+      currentStarRefs.forEach((starRef) => {
+        if (starRef) {
+          gsap.killTweensOf(starRef)
+        }
+      })
+    }
+  }, [stars])
+
+  return { stars, starRefs }
+};

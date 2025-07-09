@@ -1,20 +1,16 @@
 'use client'
 
-import Image from 'next/image'
-import { CSSProperties } from 'react'
-import { useStars, Star } from '@/hooks/useStars'
-
+import Image from 'next/image';
+import { CSSProperties } from 'react';
+import { useStars } from '@/hooks/useStars';
 
 export default function Background() {
   
-  const stars = useStars( 40, 0.70 )
+  const { stars, starRefs } = useStars(30, 0.7);
 
   return (
     <>
-      <div
-        className="scene" 
-      >
-        
+      <div className="scene">
         <div className="delorean-container">
           <Image
             src="/assets/bg/delorean.svg"
@@ -24,7 +20,7 @@ export default function Background() {
             height={100}
           />
         </div>
-        
+
         <div className="top">
           <div className="startails">
             <div className="startail-a"></div>
@@ -33,11 +29,11 @@ export default function Background() {
             <div className="startail-d"></div>
             <div className="startail-e"></div>
           </div>
-          
+
           <div className="top-lines"></div>
-          
+
           <div className="sun"></div>
-          
+
           <Image
             src="/assets/bg/palm-small.svg"
             alt="Palm Small"
@@ -45,7 +41,7 @@ export default function Background() {
             width={100}
             height={150}
           />
-          
+
           <Image
             src="/assets/bg/palm.svg"
             alt="Palm"
@@ -54,28 +50,30 @@ export default function Background() {
             height={200}
           />
         </div>
-        
+
         <div className="bottom">
           <div className="bottom-overlay"></div>
         </div>
-      
-        <div 
-          id="stars"
-        >
-          {stars.map((star: Star) => (
+
+        <div id="stars">
+          {stars.map((star, index) => (
             <div
               key={star.id}
+              ref={(el) => {starRefs.current[index] = el}}
               className="star"
-              style={{
-                '--x': `${star.x}px`,
-                '--y': `${star.y}px`,
-              } as CSSProperties}
+              style={
+                {
+                  '--x': `${star.x}px`,
+                  '--y': `${star.y}px`,
+                  opacity: 0
+                } as CSSProperties
+              }
             />
           ))}
         </div>
       </div>
-      
-      <div className="scanlines"/>
+
+      <div className="scanlines" />
     </>
-  )
+  );
 }
