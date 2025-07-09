@@ -4,7 +4,7 @@ import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useLenisScrollTrigger } from '@/hooks/useLenisScrollTrigger';
+import { useLenisScrollTrigger } from "@/hooks/useLenisScrollTrigger";
 import { useLanguage } from "@/context/LanguageContext";
 
 

@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
 
+
 export type Star = {
   id: number;
   x: number;
@@ -8,7 +9,7 @@ export type Star = {
 
 export const useStars = (starCount: number, heightRatio: number) => {
   
-  const [stars, setStars] = useState<Star[]>([]);
+  const [ stars, setStars ] = useState<Star[]>([])
 
   const createStars = useCallback(() => {
     const width = typeof window !== 'undefined' ? window.innerWidth : 1920;

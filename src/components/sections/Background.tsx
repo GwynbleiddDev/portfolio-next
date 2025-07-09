@@ -2,12 +2,12 @@
 
 import Image from 'next/image'
 import { CSSProperties } from 'react'
-import { useStars, Star } from '@/utils/stars'
+import { useStars, Star } from '@/hooks/useStars'
 
 
 export default function Background() {
   
-  const stars = useStars( 30, 0.55 )
+  const stars = useStars( 40, 0.70 )
 
   return (
     <>
