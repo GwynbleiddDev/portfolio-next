@@ -31,6 +31,7 @@ export default function Background() {
             <div className="startail-b"></div>
             <div className="startail-c"></div>
             <div className="startail-d"></div>
+            <div className="startail-e"></div>
           </div>
           
           <div className="top-lines"></div>
