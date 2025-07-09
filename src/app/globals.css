@@ -1,7 +1,7 @@
-@import "tailwindcss";
 @import url('../styles/app.css');
 @import url('../styles/background.css');
 @import url('../styles/scanlines.css');
 @import url('../styles/glitch.css');
 @import url('../styles/city.css');
 @import url('../styles/loading.css');
+@import "tailwindcss";

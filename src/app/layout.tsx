@@ -1,12 +1,6 @@
 import type { Metadata } from "next"
 import { Rajdhani } from 'next/font/google'
 import "./globals.css"
-import "@/styles/app.css"
-import "@/styles/background.css"
-import "@/styles/scanlines.css"
-import "@/styles/glitch.css"
-import "@/styles/city.css"
-import "@/styles/loading.css"
 import LenisProvider from '@/components/lenis/LenisProvider';
 import { LanguageProvider } from "@/context/LanguageContext";
 

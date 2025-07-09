@@ -114,8 +114,8 @@ export default function Projects() {
   //           ? t.projects.github
   //           : project.name === 'Projects Deployments'
   //           ? t.projects.netlify
-  //           : project.name,
-  //     };
+  //           : project.name, 
+  //     }; TODO: arreglar la animacion
   //   }
   //   return project;
   // });
