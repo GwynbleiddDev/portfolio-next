@@ -27,7 +27,9 @@ export default forwardRef( function ProjectCard(
         target="_blank"
         >
         <Image 
-          className="w-20 md:w-35 my-2 rounded-lg" 
+          className={`my-2 rounded-lg ${
+            type === 'redes' ? 'w-25' : 'w-20 md:w-35'
+          }`} 
           src={
           type === "redes"
             ? `/assets/redes/${image}.svg`

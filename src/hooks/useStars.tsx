@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback, useRef } from 'react';
 import { gsap } from 'gsap';
 import { useAnimation } from '@/context/AnimationContext';
 
+
 export type Star = {
   id: number
   x: number
@@ -60,8 +61,8 @@ export const useStars = (starCount: number, heightRatio: number) => {
       currentStarRefs.forEach((starRef) => {
         if (starRef) {
           gsap.set(starRef, {
-            opacity: 1,
-            scale: 1
+            opacity: 0.5 + Math.random() * 0.5,
+            scale: 0.5 + Math.random() * 0.5
           })
         }
       })

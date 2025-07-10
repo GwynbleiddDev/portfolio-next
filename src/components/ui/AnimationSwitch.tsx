@@ -9,8 +9,11 @@ export default function AnimationSwitch() {
   const { t } = useLanguage()
 
   const handleToggle = () => {
-    toggleAnimations();
+    localStorage.setItem('animationsEnabled', JSON.stringify(!animationsEnabled));
     window.location.reload()
+    setTimeout(() => {
+      toggleAnimations()
+    }, 1000)
   }
 
   return (
