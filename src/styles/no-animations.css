@@ -15,9 +15,12 @@
 }
 
 .no-animations .bottom:before {
-  top: 0;
+  position: absolute;
+  top: -33%;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
-
 
 .no-animations .palm,
 .no-animations .palm.small {
@@ -37,7 +40,7 @@
 .no-animations .startail-d,
 .no-animations .startail-e {
   animation: none;
-  transform: translateY(-32vmin) rotate(-20deg);
+  transform: translateY(-6rem) rotate(-20deg);
 }
 .no-animations .startail-a,
 .no-animations .startail-e {

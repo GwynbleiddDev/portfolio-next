@@ -156,10 +156,21 @@
     right: 0;
     background: rgba(0, 0, 0, 0.2);
     mix-blend-mode: soft-light;
-    height: 15vmin;
+    height: 10vmin;
     backdrop-filter: blur(1.25rem);
     clip-path: polygon(0% 38%, 2.6% 40%, 5.4% 24%, 8.7% 59%, 13.6% 72%, 18.5% 22%, 21.7% 35%, 27.2% 15%, 31% 52%, 36.4% 91%, 49.1% 100%, 54.5% 144%, 74% 40%, 77.2% 56%, 80.6% 28%, 84.4% 0%, 87.1% 13%, 94.2% 27%, 100% 32%, 100% 100%, 0% 100%);
 } 
+@media (min-width: 768px) {
+    .top:before {
+        height: 12vmin;
+    }
+}
+
+@media (min-width: 1080px) {
+    .top:before {
+        height: 15vmin;
+    }
+}
 
 .bottom-overlay {
     perspective: 14.5rem;
@@ -184,7 +195,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    --line-width: 0.0635rem;
+    --line-width: 0.06rem;
     background: linear-gradient(to right, var(--color-floor) var(--line-width), transparent var(--line-width)), linear-gradient(to bottom, var(--color-floor) var(--line-width), transparent var(--line-width));
     background-size: 2rem 125rem, 125rem 2rem;
     transform: rotateX(53deg) scale(1.8) translateZ(2.6875rem);
