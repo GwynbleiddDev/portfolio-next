@@ -10,6 +10,8 @@ import { useActiveSection } from '@/hooks/useActiveSection';
 import { useScrollToSection } from '@/hooks/useScrollToSection';
 import { useLenis } from 'lenis/react';
 import { useLanguage } from '@/context/LanguageContext';
+import AnimationSwitch from './AnimationSwitch';
+import { useAnimation } from '@/context/AnimationContext';
 
 
 type NavBarProps = {
@@ -31,6 +33,8 @@ type NavItem = {
 export default function NavBar(
   { heroRef, aboutRef, skillsRef, journeyRef, projectsRef, contactRef } : NavBarProps
 ) {
+
+  const { animationsEnabled } = useAnimation()
   
   const [ open, setOpen ] = useState(false);
   const [ isAnimating, setIsAnimating ] = useState<'opening' | 'closing' | null>(null);
@@ -83,11 +87,11 @@ export default function NavBar(
     scrollToSection({
       sectionRef,
       href, 
-      offset: 450,
+      offset: animationsEnabled ? 450 : 0,
       setActiveSection,
     })
     handleClose()
-  }, [scrollToSection, setActiveSection, handleClose]
+  }, [ animationsEnabled, scrollToSection, setActiveSection, handleClose ]
   )
 
   return (
@@ -121,6 +125,8 @@ export default function NavBar(
             </li>
           ))}
         </ul>
+
+        <AnimationSwitch />
         
         <LangToggle 
           handleClose={handleClose}

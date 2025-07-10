@@ -1,5 +1,6 @@
 "use client"
 
+import { useAnimation } from "@/context/AnimationContext";
 import { useScrollToSection } from "@/hooks/useScrollToSection";
 import { RefObject } from "react";
 
@@ -13,6 +14,9 @@ type HeroToggleProps = {
 export default function HeroToggle({ 
   isOpen, heroRef, setActiveSection }: HeroToggleProps
 ){
+
+  const { animationsEnabled } = useAnimation()
+
   const scrollToSection = useScrollToSection()
 
   const handleClick = () => {
@@ -20,7 +24,7 @@ export default function HeroToggle({
       scrollToSection({
         sectionRef: heroRef,
         href: '#hero',
-        offset: 500,
+        offset: animationsEnabled ? 500 : 0,
         setActiveSection,
       })
     }

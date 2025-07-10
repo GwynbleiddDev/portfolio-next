@@ -6,11 +6,14 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useLenisScrollTrigger } from "@/hooks/useLenisScrollTrigger";
 import { useLanguage } from "@/context/LanguageContext";
+import { useAnimation } from "@/context/AnimationContext";
 
 
 gsap.registerPlugin(ScrollTrigger)
 
 export default function MyJourney() {
+
+  const { animationsEnabled } = useAnimation()
 
   const journeyRef = useRef<HTMLElement>(null)
   const backRef = useRef<HTMLDivElement>(null)
@@ -20,80 +23,87 @@ export default function MyJourney() {
   const scroller = useLenisScrollTrigger()
 
   useGSAP(() => {
-    const ctx = gsap.context(() => { // React
-      
-      gsap.killTweensOf([journeyRef.current, imageContainerRef.current, textContainerRef.current, backRef.current]) // clean
-      
-      const tl = gsap.timeline({
-        ease: 'power2.out',
-        scrollTrigger: {
-          start: 'top top',
-          scroller,
-          scrub: true,
-          pin: journeyRef.current,
-          pinSpacing: false,
-          // markers: true
-        }
-      })
-
-      tl // ANIMATIONS
-        .fromTo( backRef.current, {
-          scale: 0.5,
-          opacity: 0,
-          top: '50%',
-          left: '50%',
-          y: 0
-        }, {
-          opacity: 1,
-          duration: 2
+    if(animationsEnabled) {
+      const ctx = gsap.context(() => { // React
+        
+        gsap.killTweensOf([journeyRef.current, imageContainerRef.current, textContainerRef.current, backRef.current]) // clean
+        
+        const tl = gsap.timeline({
+          ease: 'power2.out',
+          scrollTrigger: {
+            start: 'top top',
+            scroller,
+            scrub: true,
+            pin: journeyRef.current,
+            pinSpacing: false,
+            // markers: true
+          }
         })
-        .to( backRef.current, {
-          scale: 1,
-          duration: 4,
-        }, '<' )
-        .to( backRef.current, { 
-          scale: 1.05 , 
-          duration: 10
-        }, 4 )
-        .fromTo( textContainerRef.current, {
-          opacity: 0,
-          y: 10
-        }, {
-          opacity: 1,
-          duration: 1
-        }, 2 )
-        .to( textContainerRef.current, {
-          y: -10,
-          duration: 14
-        }, '<')
-        .fromTo( 
-          imageContainerRef.current, 
-          { 
-            opacity: '0',
-            maskImage: `
-              radial-gradient(
-                circle at 50% 150%, 
-                rgb(0, 0, 0) 0%, 
-                rgba(0, 0, 0, 0) 15%
-              )
-            `,
-          }, { 
-            opacity: '1', 
-            maskImage: `
-              radial-gradient(
-                circle at 50% 100%,
-                rgb(0, 0, 0) 100%,
-                rgba(0, 0, 0, 0) 115%
-              )`
-            ,
-            duration: 3,
-          }, 2.5 )
-        .to( backRef.current, { opacity: 0 , duration: 3 }, 14 )
-
-    }, journeyRef )
-
-    return () => ctx.revert() // clean
-  }, { dependencies: [ scroller ], scope: journeyRef })
+  
+        tl // ANIMATIONS
+          .fromTo( backRef.current, {
+            scale: 0.5,
+            opacity: 0,
+            top: '50%',
+            left: '50%',
+            y: 0
+          }, {
+            opacity: 1,
+            duration: 2
+          })
+          .to( backRef.current, {
+            scale: 1,
+            duration: 4,
+          }, '<' )
+          .to( backRef.current, { 
+            scale: 1.05 , 
+            duration: 10
+          }, 4 )
+          .fromTo( textContainerRef.current, {
+            opacity: 0,
+            y: 10
+          }, {
+            opacity: 1,
+            duration: 1
+          }, 2 )
+          .to( textContainerRef.current, {
+            y: -10,
+            duration: 14
+          }, '<')
+          .fromTo( 
+            imageContainerRef.current, 
+            { 
+              opacity: '0',
+              maskImage: `
+                radial-gradient(
+                  circle at 50% 150%, 
+                  rgb(0, 0, 0) 0%, 
+                  rgba(0, 0, 0, 0) 15%
+                )
+              `,
+            }, { 
+              opacity: '1', 
+              maskImage: `
+                radial-gradient(
+                  circle at 50% 100%,
+                  rgb(0, 0, 0) 100%,
+                  rgba(0, 0, 0, 0) 115%
+                )`
+              ,
+              duration: 3,
+            }, 2.5 )
+          .to( backRef.current, { opacity: 0 , duration: 3 }, 14 )
+  
+      }, journeyRef )
+  
+      return () => ctx.revert() // clean
+    } else {
+      gsap.set([imageContainerRef.current, textContainerRef.current, backRef.current], {
+        scale: 1,
+        opacity: 1
+      })
+    }
+  }, { dependencies: [ scroller, useAnimation ], scope: journeyRef })
 
   const { t } = useLanguage()
 

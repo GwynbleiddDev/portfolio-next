@@ -14,7 +14,7 @@ export default function LangToggle({handleClose} : {handleClose: () => void}) {
   return (
       <button
         onClick={handleToggle}
-        className="fixed bottom-6 left-10 flex justify-center items-center gap-2 text-sm font-bold text-indigo-400 hover:text-indigo-200 transition-colors duration-300"
+        className="fixed bottom-8 left-10 flex justify-center items-center gap-2 text-sm font-bold text-indigo-400 hover:text-indigo-200 transition-colors duration-300"
       >
         <GlobeAltIcon className="w-5 h-5" />
         <span className="lang-label">

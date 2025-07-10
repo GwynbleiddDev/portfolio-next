@@ -3,6 +3,7 @@ import { Rajdhani } from 'next/font/google'
 import "./globals.css"
 import LenisProvider from '@/components/lenis/LenisProvider';
 import { LanguageProvider } from "@/context/LanguageContext";
+import { AnimationProvider } from "@/context/AnimationContext";
 
 const rajdhani = Rajdhani({
   subsets: ['latin'],
@@ -28,7 +29,11 @@ export default function RootLayout({
         className={`${rajdhani.className} overflow-x-hidden antialiased`}
       >
         <LanguageProvider>
-          <LenisProvider>{children}</LenisProvider>
+          <AnimationProvider>
+            <LenisProvider>
+              {children}
+            </LenisProvider>
+          </AnimationProvider>
         </LanguageProvider>
       </body>
     </html>

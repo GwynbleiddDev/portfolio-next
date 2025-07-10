@@ -7,11 +7,14 @@ import ProjectCard from "../items/ProjectCard"
 import { projects } from "@/data/projects"
 import Heading from "../ui/Heading"
 import { useLanguage } from "@/context/LanguageContext";
+import { useAnimation } from "@/context/AnimationContext";
 
 
 gsap.registerPlugin(ScrollTrigger)
 
 export default function Projects() {
+
+  const { animationsEnabled } = useAnimation()
 
   const projectsRef = useRef<HTMLElement>(null)
   const backRef = useRef<HTMLDivElement>(null)
@@ -20,89 +23,96 @@ export default function Projects() {
   const scroller = useLenisScrollTrigger()
 
   useGSAP(() => {
-    const ctx = gsap.context(() => { // React
-
-      gsap.killTweensOf([projectsRef.current, backRef.current]) // clean
-
-      const tl = gsap.timeline({
-        ease: 'power2.out',
-        scrollTrigger: {
-          start: 'top top',
-          scroller,
-          scrub: true,
-          pin: projectsRef.current,
-          pinSpacing: false,
-          // markers: true
-        }
-      })
-
-      tl
-        .fromTo( backRef.current, {
-          opacity: 0,
-          scale: 1,
-          maskImage: `
-            radial-gradient(
-              circle at 50% 150%, 
-              rgb(0, 0, 0) 0%, 
-              rgba(0, 0, 0, 0) 10%
-            )
-          `,
-        }, {
-          scale: 0.9,
-          duration: 30
+    if(animationsEnabled) {
+      const ctx = gsap.context(() => { // React
+  
+        gsap.killTweensOf([projectsRef.current, backRef.current]) // clean
+  
+        const tl = gsap.timeline({
+          ease: 'power2.out',
+          scrollTrigger: {
+            start: 'top top',
+            scroller,
+            scrub: true,
+            pin: projectsRef.current,
+            pinSpacing: false,
+            // markers: true
+          }
         })
-        .to( backRef.current, {
-          opacity: 1,
-          maskImage: `
-            radial-gradient(
-            circle at 50% 100%,
-            rgb(0, 0, 0) 100%,
-            rgba(0, 0, 0, 0) 110%
-          )`,
-          duration: 5,
-        }, '<' )
-        .fromTo( cardRef.current, {
-          opacity: 0,
-          y: 10
-        },{
-          opacity: 1,
-          y: 0,
-          stagger: {
-            each: 1, 
-            from: 'start',
-          },
-          duration: 3,
-        }, 5 )
-        .to( 
-          backRef.current,
-          {
+  
+        tl
+          .fromTo( backRef.current, {
+            opacity: 0,
+            scale: 1,
+            maskImage: `
+              radial-gradient(
+                circle at 50% 150%, 
+                rgb(0, 0, 0) 0%, 
+                rgba(0, 0, 0, 0) 10%
+              )
+            `,
+          }, {
+            scale: 0.9,
+            duration: 30
+          })
+          .to( backRef.current, {
             opacity: 1,
             maskImage: `
               radial-gradient(
-              circle at 50% 150%, 
-              rgb(0, 0, 0, 0) 0%, 
-              rgba(0, 0, 0) 10%
+              circle at 50% 100%,
+              rgb(0, 0, 0) 100%,
+              rgba(0, 0, 0, 0) 110%
             )`,
-            duration: 0.1
-          }, 25 )
-        .to( backRef.current,
-          {
+            duration: 5,
+          }, '<' )
+          .fromTo( cardRef.current, {
             opacity: 0,
-            maskImage: `
-              radial-gradient(
-                circle at 50% 100%, 
-                rgb(0, 0, 0, 0) 100%, 
-                rgba(0, 0, 0) 110%
-              )
-            `,
-            duration: 16
-          }, 30
-        )
-
-    }, projectsRef )
-
-    return () => ctx.revert() // clean
-  }, { dependencies: [ scroller ], scope: projectsRef })
+            y: 10
+          },{
+            opacity: 1,
+            y: 0,
+            stagger: {
+              each: 1, 
+              from: 'start',
+            },
+            duration: 3,
+          }, 5 )
+          .to( 
+            backRef.current,
+            {
+              opacity: 1,
+              maskImage: `
+                radial-gradient(
+                circle at 50% 150%, 
+                rgb(0, 0, 0, 0) 0%, 
+                rgba(0, 0, 0) 10%
+              )`,
+              duration: 0.1
+            }, 25 )
+          .to( backRef.current,
+            {
+              opacity: 0,
+              maskImage: `
+                radial-gradient(
+                  circle at 50% 100%, 
+                  rgb(0, 0, 0, 0) 100%, 
+                  rgba(0, 0, 0) 110%
+                )
+              `,
+              duration: 16
+            }, 30
+          )
+  
+      }, projectsRef )
+  
+      return () => ctx.revert() // clean
+    } else {
+      gsap.set([backRef.current, cardRef.current], {
+        scale: 1,
+        opacity: 1
+      })
+    }
+  }, { dependencies: [ scroller, useAnimation ], scope: projectsRef })
 
   const { t } = useLanguage()
   // const translatedCard = projects.map((project) => {

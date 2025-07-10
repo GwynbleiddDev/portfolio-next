@@ -5,12 +5,15 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useLenisScrollTrigger } from '@/hooks/useLenisScrollTrigger';
+import { useAnimation } from '@/context/AnimationContext';
 
 
 gsap.registerPlugin(ScrollTrigger);
 
 
 export default function Hero() {
+
+  const { animationsEnabled } = useAnimation()
 
   const heroRef = useRef<HTMLElement>(null)
   const glitchContainerRef = useRef<HTMLDivElement>(null)
@@ -20,78 +23,85 @@ export default function Hero() {
   const scroller = useLenisScrollTrigger()
 
   useGSAP(() => {
-    const ctx = gsap.context(() => { // for react
+    if(animationsEnabled) {
+      const ctx = gsap.context(() => { // for react
 
-      gsap.killTweensOf([glitchContainerRef.current, subtitleContainerRef.current, backRef.current]) // clean prev animations
+        gsap.killTweensOf([glitchContainerRef.current, subtitleContainerRef.current, backRef.current]) // clean prev animations
 
-      const tl = gsap.timeline({ 
-        pin: heroRef.current,
-        scrollTrigger: {
-          start: 'top top',
-          end: '+=1300',
-          scroller, 
-          scrub: true,
+        const tl = gsap.timeline({ 
           pin: heroRef.current,
-          pinSpacing: false,
-          // markers: true,
-        },
-      })
+          scrollTrigger: {
+            start: 'top top',
+            end: '+=1300',
+            scroller, 
+            scrub: true,
+            pin: heroRef.current,
+            pinSpacing: false,
+            // markers: true,
+          },
+        })
 
-      // PREV
-      gsap.set(glitchContainerRef.current, {
-        scale: 4,
-        opacity: 0,
-      })
-      
-      tl // ANIMATIONS
-        .to( glitchContainerRef.current, { 
-            scale: 1, 
-            duration: 1.6 
-          }, 0.1 )
-        .to( glitchContainerRef.current, { 
-          opacity: 1,
-          duration: 0.3 
-        }, 0.15)
-        .fromTo( subtitleContainerRef.current, {
+        // PREV
+        gsap.set(glitchContainerRef.current, {
+          scale: 4,
           opacity: 0,
-          y: 5
-        },{ 
-          opacity: 1, 
-          y: -10, 
-          duration: 0.3 
-        }, 1.6 )
-        .fromTo( backRef.current, {
-          opacity: 0,
-        },{ 
+        })
+        
+        tl // ANIMATIONS
+          .to( glitchContainerRef.current, { 
+              scale: 1, 
+              duration: 1.6 
+            }, 0.1 )
+          .to( glitchContainerRef.current, { 
             opacity: 1,
-            duration: 0.2 
-          }, 1.9 )
-        .to([ 
-          glitchContainerRef.current, 
-          subtitleContainerRef.current, 
-          backRef.current ], { 
-            scale: 1 ,          
-            duration: 1.25  
-          }, 2.1 )
-        .to([ 
-          glitchContainerRef.current, 
-          subtitleContainerRef.current, 
-          backRef.current ], { 
-            scale: 0.9, 
-            duration: 1 
-          }, 3.35 )
-        .to([ 
-          glitchContainerRef.current, 
-          subtitleContainerRef.current, 
-          backRef.current], { 
+            duration: 0.3 
+          }, 0.15)
+          .fromTo( subtitleContainerRef.current, {
             opacity: 0,
-            duration: 0.5 
-          }, 4.6 )
+            y: 5
+          },{ 
+            opacity: 1, 
+            y: -10, 
+            duration: 0.3 
+          }, 1.6 )
+          .fromTo( backRef.current, {
+            opacity: 0,
+          },{ 
+              opacity: 1,
+              duration: 0.2 
+            }, 1.9 )
+          .to([ 
+            glitchContainerRef.current, 
+            subtitleContainerRef.current, 
+            backRef.current ], { 
+              scale: 1 ,          
+              duration: 1.25  
+            }, 2.1 )
+          .to([ 
+            glitchContainerRef.current, 
+            subtitleContainerRef.current, 
+            backRef.current ], { 
+              scale: 0.9, 
+              duration: 1 
+            }, 3.35 )
+          .to([ 
+            glitchContainerRef.current, 
+            subtitleContainerRef.current, 
+            backRef.current], { 
+              opacity: 0,
+              duration: 0.5 
+            }, 4.6 )
 
-    }, heroRef )
+      }, heroRef )
 
-    return () => ctx.revert() // clean
-  }, { dependencies: [scroller], scope: heroRef })
+      return () => ctx.revert() // clean
+    } else {
+      gsap.set([glitchContainerRef.current, subtitleContainerRef.current, backRef.current], {
+        scale: 1,
+        opacity: 1
+      })
+    }
+  }, { dependencies: [scroller, animationsEnabled], scope: heroRef })
 
   return (
     <section

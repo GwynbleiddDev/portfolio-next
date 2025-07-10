@@ -4,4 +4,5 @@
 @import url('../styles/glitch.css');
 @import url('../styles/city.css');
 @import url('../styles/loading.css');
+@import url('../styles/no-animations.css');
 @import "tailwindcss";

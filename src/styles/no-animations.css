@@ -1,0 +1,78 @@
+.no-animations * {
+  animation: none !important;
+} 
+
+.no-animations .scene:after {
+  opacity: 0.3; 
+}
+
+.no-animations .delorean-container {
+  animation: none;
+}
+
+.no-animations .delorean-container {
+  transform: translateX(-50%);
+}
+
+.no-animations .bottom:before {
+  top: 0;
+}
+
+
+.no-animations .palm,
+.no-animations .palm.small {
+  animation: none;
+}
+.no-animations .palm {
+  transform: translate(10vmin, 0vmin) rotate(6deg) 
+}
+.no-animations .palm.small {
+  transform: translate(5rem, 5rem) scale(0.4) rotate(345deg) skewX(5deg);
+}
+
+
+.no-animations .startail-a,
+.no-animations .startail-b,
+.no-animations .startail-c,
+.no-animations .startail-d,
+.no-animations .startail-e {
+  animation: none;
+  transform: translateY(-32vmin) rotate(-20deg);
+}
+.no-animations .startail-a,
+.no-animations .startail-e {
+  opacity: 0;
+}
+.no-animations .bottom:before {
+  animation: none;
+  transform: rotateX(53deg) scale(1.8);
+}
+
+.no-animations .glow::before,
+.no-animations .glitch::before,
+.no-animations .glow::after,
+.no-animations .glitch::after {
+  opacity: 0;
+  animation: none;
+}
+
+.no-animations .glow,
+.no-animations .glitch,
+.no-animations .subtitle {
+  animation: none;
+}
+
+.no-animations .scanlines,
+.no-animations .scanlines::before {
+  opacity: 0;
+}
+
+.no-animations .scanlines::before,
+.no-animations .city-sun,
+.no-animations .city-lights {
+  animation: none;
+}
+
+.no-animations .arrow {
+  animation: none;
+}

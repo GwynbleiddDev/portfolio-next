@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState, useRef, RefObject } from "react";
+import { useAnimation } from "@/context/AnimationContext";
 import LoadingPage from "@/components/extras/LoadingPage";
 import Background from "@/components/sections/Background";
 import NavBar from "@/components/ui/NavBar";
@@ -14,6 +15,8 @@ import DownIcon from "@/components/ui/DownIcon";
 
 
 export default function Home() {
+
+  const { animationsEnabled } = useAnimation()
 
   const [ isLoading, setIsLoading ] = useState(true)
   const [ fadeOut, setFadeOut ] = useState(false)
@@ -61,23 +64,23 @@ export default function Home() {
         <div 
           id='hero' 
           ref={heroRef}
-        > <Hero /> <div className="h-[50vh]"/> </div> 
+        > <Hero /> {animationsEnabled && <div className="h-[50vh]"/>} </div> 
         <div 
           id="about" 
           ref={aboutRef}
-        > <AboutMe /> <div className="h-[30vh]"/> </div>
+        > <AboutMe /> {animationsEnabled && <div className="h-[30vh]"/>} </div>
         <div 
           id="skills" 
           ref={skillsRef}
-        > <Skills /> <div className="h-[30vh]"/> </div>
+        > <Skills /> {animationsEnabled && <div className="h-[30vh]"/>} </div>
         <div 
           id="journey" 
           ref={journeyRef}
-        > <MyJourney /> <div className="h-[30vh]"/> </div>
+        > <MyJourney /> {animationsEnabled && <div className="h-[30vh]"/>} </div>
         <div 
           id="projects" 
           ref={projectsRef}
-        > <Projects /> <div className="h-[50vh]"/> </div>
+        > <Projects /> {animationsEnabled && <div className="h-[50vh]"/>} </div>
         <div 
           id="contact" 
           ref={contactRef}
