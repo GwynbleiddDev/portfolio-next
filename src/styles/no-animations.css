@@ -1,6 +1,3 @@
-/* .no-animations * {
-  animation: none !important;
-}  */
 
 .no-animations .scene:after {
   opacity: 0.3; 
