@@ -142,11 +142,11 @@ export default function Projects() {
       >
           <Heading
             color="text-indigo-400"
-            mb="mb-6"
+            mb="mb-4"
           >{t.projects.title}</Heading>
 
         <div
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3"
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 mb-2"
         >
           {projects.map((project, i) => (
             <ProjectCard 

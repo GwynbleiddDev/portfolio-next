@@ -25,7 +25,7 @@ export function useScrollToSection() {
         easing: (t: number) => 1 - Math.pow(1 - t, 3),
         onComplete: () => setActiveSection(href, true)
       })
-    } 
+    }
   }
   return scrollToSection;
 }

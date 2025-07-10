@@ -65,12 +65,8 @@
   animation: none;
 }
 
-.no-animations .scanlines::before,
+.no-animations .arrow,
 .no-animations .city-sun,
-.no-animations .city-lights {
-  animation: none;
-}
-
-.no-animations .arrow {
+.no-animations .city-star {
   animation: none;
 }

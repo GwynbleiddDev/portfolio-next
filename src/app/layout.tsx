@@ -1,9 +1,10 @@
+import { ReactNode } from "react";
 import type { Metadata } from "next"
 import { Rajdhani } from 'next/font/google'
 import "./globals.css"
-import LenisProvider from '@/components/lenis/LenisProvider';
 import { LanguageProvider } from "@/context/LanguageContext";
 import { AnimationProvider } from "@/context/AnimationContext";
+import LenisProvider from '@/components/lenis/LenisProvider';
 
 const rajdhani = Rajdhani({
   subsets: ['latin'],
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html lang="en">

@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useRef, RefObject } from 'react';
 
+
 type UseActiveSectionProps = {
   defaultSection?: string
   refs: Array<RefObject<HTMLDivElement | null>>
@@ -9,7 +10,7 @@ type UseActiveSectionProps = {
 
 export function useActiveSection({ defaultSection = '#hero', refs }: UseActiveSectionProps) {
   
-  const [activeSection, setActiveSection] = useState(defaultSection)
+  const [ activeSection, setActiveSection ] = useState(defaultSection)
   const observerRef = useRef<IntersectionObserver | null>(null)
   const manuallySetSection = useRef<string | null>(null)
 
