@@ -109,6 +109,7 @@ export default function Skills() {
       gsap.set([backRef.current, cardRef.current], {
         scale: 1,
         opacity: 1,
+        maskImage: 'none'
       })
     }
   }, { dependencies: [ scroller, useAnimation ], scope: skillRef })

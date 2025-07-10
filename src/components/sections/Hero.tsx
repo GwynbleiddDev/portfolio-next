@@ -100,6 +100,9 @@ export default function Hero() {
         scale: 1,
         opacity: 1
       })
+      gsap.set(subtitleContainerRef.current, {
+        y: -10
+      })
     }
   }, { dependencies: [scroller, animationsEnabled], scope: heroRef })
 
@@ -123,7 +126,6 @@ export default function Hero() {
           <h1 className="glitch title" data-text="ALEJANDRO_VALERA">
             ALEJANDRO_VALERA
           </h1>
-          <h1 className="glow title">ALEJANDRO_VALERA</h1>
         </div>
 
         <div ref={subtitleContainerRef}>

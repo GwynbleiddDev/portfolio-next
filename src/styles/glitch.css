@@ -6,13 +6,13 @@
   font-style: italic;
 }
 
-.glitch, .glow {
+.glitch {
   font-size: 2.65rem;
   animation: glitch 5s 5s infinite;
 }
 
 @media (min-width: 768px) {
-  .glitch, .glow {
+  .glitch {
     font-size: 5rem;
     letter-spacing: .07em;
     animation: glitch 5s 5s infinite;
@@ -31,7 +31,7 @@
   }
 }
 
-.glitch::before, .glow::before {
+.glitch::before {
   content: attr(data-text);
   position: absolute;
   left: -1px;
@@ -41,7 +41,7 @@
   animation: noise-1 3s linear infinite alternate-reverse, glitch 5s 5.05s infinite;
 }
 
-.glitch::after, .glow::after {
+.glitch::after/*, .glow::after*/ {
   content: attr(data-text);
   position: absolute;
   left: 1px;
@@ -49,12 +49,6 @@
   background: transparent;
   top: 0;
   animation: noise-2 3s linear infinite alternate-reverse, glitch 5s 5s infinite;
-}
-
-.glow {
-  text-shadow: 0 0 1000px #dfbfbf;
-  color: transparent;
-  position: absolute;
 }
 
 .subtitle {

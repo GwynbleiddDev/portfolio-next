@@ -23,6 +23,9 @@ const langs = {
       cv: "Download my CV (PDF)",
       rights: "All rights reserved.",
     },
+    switch: {
+      text: "Reduce Animations"
+    }
   },
 
   es: {
@@ -49,6 +52,9 @@ const langs = {
       cv: "Descarga mi Currículum (PDF)",
       rights: "Todos los derechos reservados."
     },
+    switch: {
+      text: "Reducir Animaciones"
+    }
   },
 };
 

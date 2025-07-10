@@ -135,6 +135,7 @@ export default function AboutMe() {
       gsap.set([cityContainerRef.current, textContainerRef.current, backRef.current], {
         scale: 1,
         opacity: 1,
+        maskImage: 'none',
       })
     }
   }, { dependencies: [ scroller, useAnimation ], scope: aboutRef })

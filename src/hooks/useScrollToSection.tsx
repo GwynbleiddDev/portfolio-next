@@ -12,10 +12,9 @@ type ScrollToSectionProps = {
 }
 
 export function useScrollToSection() {
-  
-  const lenis = useLenis();
+  const lenis = useLenis()
 
-  const scrollToSection = ({ sectionRef, href, offset, setActiveSection }: ScrollToSectionProps) => {
+  const scrollToSection = ({ sectionRef, href, offset, setActiveSection } : ScrollToSectionProps) => {
     if (lenis && sectionRef.current) {
       lenis.start()
       const rect = sectionRef.current.getBoundingClientRect()

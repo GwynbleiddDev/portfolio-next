@@ -1,6 +1,6 @@
-.no-animations * {
+/* .no-animations * {
   animation: none !important;
-} 
+}  */
 
 .no-animations .scene:after {
   opacity: 0.3; 
@@ -48,23 +48,21 @@
   transform: rotateX(53deg) scale(1.8);
 }
 
-.no-animations .glow::before,
 .no-animations .glitch::before,
-.no-animations .glow::after,
 .no-animations .glitch::after {
   opacity: 0;
   animation: none;
 }
 
-.no-animations .glow,
 .no-animations .glitch,
 .no-animations .subtitle {
-  animation: none;
+  animation: glitch-2 4s 4.02s infinite;
 }
 
 .no-animations .scanlines,
 .no-animations .scanlines::before {
   opacity: 0;
+  animation: none;
 }
 
 .no-animations .scanlines::before,

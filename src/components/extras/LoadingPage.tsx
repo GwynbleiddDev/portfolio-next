@@ -3,15 +3,14 @@ import { useEffect } from "react"
 
 
 export default function LoadingPage({ fadeOut } : {fadeOut : boolean}) {
-  
+
   const lenis = useLenis()
+  
   useEffect(() => {
     lenis?.stop() 
     window.scrollTo(0, 0)
     if(fadeOut) setTimeout(() => lenis?.start(), 500)
-
   })
-  
 
   return (
     <div

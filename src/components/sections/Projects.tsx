@@ -109,7 +109,8 @@ export default function Projects() {
     } else {
       gsap.set([backRef.current, cardRef.current], {
         scale: 1,
-        opacity: 1
+        opacity: 1,
+        maskImage: 'none'
       })
     }
   }, { dependencies: [ scroller, useAnimation ], scope: projectsRef })
