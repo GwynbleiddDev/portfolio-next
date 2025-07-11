@@ -43,7 +43,7 @@ const langs = {
     projects: {
       title: "Proyectos",
       github: "Repositorios en Github",
-      netlify: "Más Proyectos en Netlify",
+      netlify: "Proyectos en Netlify",
     },
     contact: {
       title: "Contacto",

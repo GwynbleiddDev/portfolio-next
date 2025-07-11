@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -16,12 +16,18 @@ export default function Projects() {
 
   const { animationsEnabled } = useAnimation()
 
+  const { t } = useLanguage()
+
   const projectsRef = useRef<HTMLElement>(null)
   const backRef = useRef<HTMLDivElement>(null)
   const cardRef = useRef<(HTMLDivElement | null)[]>([])
 
   const scroller = useLenisScrollTrigger()
 
+  useEffect(() => {
+    cardRef.current = [];
+  }, [t.projects]);
+  
   useGSAP(() => {
     if(animationsEnabled) {
       const ctx = gsap.context(() => { // React
@@ -115,21 +121,20 @@ export default function Projects() {
     }
   }, { dependencies: [ scroller, useAnimation ], scope: projectsRef })
 
-  const { t } = useLanguage()
-  // const translatedCard = projects.map((project) => {
-  //   if (project.type === 'redes') {
-  //     return {
-  //       ...project,
-  //       name:
-  //         project.name === 'Github Repositories'
-  //           ? t.projects.github
-  //           : project.name === 'Projects Deployments'
-  //           ? t.projects.netlify
-  //           : project.name, 
-  //     }; TODO: arreglar la animacion
-  //   }
-  //   return project;
-  // });
+  const translatedCard = projects.map((project) => {
+    if (project.type === 'redes') {
+      return {
+        ...project,
+        name:
+          project.name === 'Github Repositories'
+            ? t.projects.github
+            : project.name === 'Projects Deployments'
+            ? t.projects.netlify
+            : project.name, 
+      };
+    }
+    return project;
+  });
 
   return (
     <section
@@ -148,9 +153,9 @@ export default function Projects() {
         <div
           className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 mb-2"
         >
-          {projects.map((project, i) => (
+          {translatedCard.map((project, i) => (
             <ProjectCard 
-              key={project.name}
+              key={project.name }
               name={project.name}
               image={project.image}
               link={project.link}

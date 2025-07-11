@@ -1,12 +1,16 @@
+import { useLanguage } from "@/context/LanguageContext";
 import { ArrowDownCircleIcon } from "@heroicons/react/16/solid";
 
 
 export default function Footer() {
+
+  const { t } = useLanguage()
+
   return (
     <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 md:gap-8">
       <div className="bg-gray-950/60 border border-purple-900 py-4 px-6 md:px-10 rounded-lg shadow-purple-900/80">
         <p className="text-gray-300 text-sm md:text-base">
-          © 2025 Alejandro Valera. All rights reserved.
+          © 2025 Alejandro Valera. {t.footer.rights}.
         </p>
       </div>
 
@@ -16,7 +20,7 @@ export default function Footer() {
           className="text-indigo-400 hover:text-indigo-200 text-sm md:text-base transition-colors duration-300 flex items-center gap-2"
         >
           <ArrowDownCircleIcon className="h-6 w-6 md:h-7 md:w-7 text-gray-200" />
-          <p>Download my CV (PDF)</p>
+          <p>{t.footer.cv}</p>
         </a>
         <span className="text-gray-400 text-xs md:text-sm italic">
           Powered by retro-futuristic vibes
