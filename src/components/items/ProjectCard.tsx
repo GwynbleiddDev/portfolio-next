@@ -17,7 +17,7 @@ export default forwardRef( function ProjectCard(
   return (
     <div
       ref={ref}
-      className="bg-[#0d0d0d] border md:m-2 md:p-2 border-indigo-500/50 rounded-lg flex flex-col items-center"
+      className={`bg-[#0d0d0d] border md:m-2 md:p-2 border-indigo-500/50 rounded-lg flex flex-col items-center ${type === 'redes' ? 'mt-2 md:mt-[1.1rem]' : ''}`}
     >
       <h3 
         className="text-[1.05rem] md:text-[1.2rem] font-semibold text-indigo-300"
