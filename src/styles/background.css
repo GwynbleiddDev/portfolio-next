@@ -141,7 +141,7 @@
 .top:after {
     content: "";
     position: absolute;
-    bottom: 0;
+    bottom: -1vmin;
     left: 0;
     right: 0;
     background: #222;
@@ -151,7 +151,7 @@
 .top:before {
     content: "";
     position: absolute;
-    bottom: 0;
+    bottom: -1vmin;
     left: 0;
     right: 0;
     background: rgba(0, 0, 0, 0.2);
