@@ -141,28 +141,31 @@
 .top:after {
     content: "";
     position: absolute;
-    bottom: -1vmin;
+    bottom: -0.5vmin;
     left: 0;
     right: 0;
     background: #222;
-    height: 5vmin;
+    height: 4vmin;
     clip-path: polygon(0% 38%, 2.6% 40%, 5.4% 24%, 8.7% 59%, 13.6% 72%, 18.5% 22%, 21.7% 39%, 27.2% 8%, 40% 46%, 44% 34%, 48.1% 58%, 54.5% 35%, 60% 53%, 65.4% 63%, 73.4% 15%, 79.8% 29%, 86.5% 15%, 94.1% 36%, 100% 27%, 100% 100%, 0% 100%);
 }
-.top:before {
-    content: "";
-    position: absolute;
-    bottom: -1vmin;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.2);
-    mix-blend-mode: soft-light;
-    height: 10vmin;
-    backdrop-filter: blur(1.25rem);
-    clip-path: polygon(0% 38%, 2.6% 40%, 5.4% 24%, 8.7% 59%, 13.6% 72%, 18.5% 22%, 21.7% 35%, 27.2% 15%, 31% 52%, 36.4% 91%, 49.1% 100%, 54.5% 144%, 74% 40%, 77.2% 56%, 80.6% 28%, 84.4% 0%, 87.1% 13%, 94.2% 27%, 100% 32%, 100% 100%, 0% 100%);
-} 
-@media (min-width: 768px) {
+
+@media( min-width: 640px) {
     .top:before {
-        height: 12vmin;
+        content: "";
+        position: absolute;
+        bottom: -0.5vmin;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.2);
+        mix-blend-mode: soft-light;
+        height: 10vmin;
+        backdrop-filter: blur(1.25rem);
+        clip-path: polygon(0% 38%, 2.6% 40%, 5.4% 24%, 8.7% 59%, 13.6% 72%, 18.5% 22%, 21.7% 35%, 27.2% 15%, 31% 52%, 36.4% 91%, 49.1% 100%, 54.5% 144%, 74% 40%, 77.2% 56%, 80.6% 28%, 84.4% 0%, 87.1% 13%, 94.2% 27%, 100% 32%, 100% 100%, 0% 100%);
+    } 
+}
+@media (min-width: 860px) {
+    .top:before {
+        height: 15vmin;
     }
 }
 
@@ -177,6 +180,7 @@
     flex: 0 0 12.5rem;
     position: absolute;
     z-index: 10000;
+    top: 0;
     right: 0;
     left: 0;
     bottom: 0;
