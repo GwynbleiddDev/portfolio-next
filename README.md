@@ -1,6 +1,6 @@
 # Portafolio Web - Alejandro Valera
 
-Este es un portafolio web moderno desarrollado como una **SPA** (Single Page Application) utilizando **Next.js** y **TypeScript**. El objetivo principal es presentar tus proyectos, habilidades y experiencia con una experiencia visual dinámica y animada, cuidando la performance, la accesibilidad y la personalización para el usuario.
+Este es un portafolio web moderno desarrollado como una **SPA** (Single Page Application) utilizando **Next.js** y **TypeScript**. El objetivo principal es presentar mis proyectos, habilidades y experiencia con una experiencia visual dinámica y animada, cuidando la performance, la accesibilidad y la personalización para el usuario.
 
 ---
 
