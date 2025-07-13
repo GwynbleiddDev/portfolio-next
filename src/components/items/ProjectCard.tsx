@@ -20,7 +20,7 @@ export default forwardRef( function ProjectCard(
       className={`bg-[#0d0d0d] border md:m-2 md:p-2 border-indigo-500/50 rounded-lg flex flex-col items-center ${type === 'redes' ? 'mt-2 md:mt-[1.1rem]' : ''}`}
     >
       <h3 
-        className="text-[1.05rem] md:text-[1.2rem] font-semibold text-indigo-300"
+        className="text-[1.2rem] md:text-[1.2rem] font-semibold text-indigo-300 mx-1 mt-2"
       >{name}</h3>
         <a 
         href={link} 
@@ -40,7 +40,7 @@ export default forwardRef( function ProjectCard(
           height={100}
         />
         </a>
-      <p className="text-white text-sm">
+      <p className="text-white text-sm mb-1">
         {
           type === 'redes' ? '' : type
         }

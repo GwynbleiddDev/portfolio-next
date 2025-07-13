@@ -147,7 +147,7 @@ export default function Projects() {
       >
           <Heading
             color="text-indigo-400"
-            mb="mb-4"
+            mb="mb-2"
           >{t.projects.title}</Heading>
 
         <div

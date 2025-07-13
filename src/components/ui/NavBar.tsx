@@ -112,7 +112,7 @@ export default function NavBar(
           open ? 'translate-x-0 shadow-purple-900/50' : 'translate-x-full'
         }`}
       >
-        <ul className="flex flex-col items-center justify-center h-full gap-8 font-bold sm:text-xl md:text-2xl text-indigo-400">
+        <ul className="flex flex-col items-center justify-center text-center h-full gap-8 font-bold sm:text-xl md:text-2xl text-indigo-400">
           {navItems.map((item) => (
             <li key={item.id}>
               <NavButton
