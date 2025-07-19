@@ -48,10 +48,10 @@ src/
     AnimationContext.tsx // Manejo global de animaciones
     LanguageContext.tsx  // Manejo global de idioma
   hooks/
-    useActiveSection.tsx // Detecta sección visible
-    useScrollToSection.tsx // Navegación fluida con Lenis
-    useStars.tsx           // Estrellas animadas en fondo
-    useLenisScrollTrigger.tsx // Sincroniza scroll Lenis con GSAP
+    useActiveSection.ts // Detecta sección visible
+    useScrollToSection.ts // Navegación fluida con Lenis
+    useStars.ts           // Estrellas animadas en fondo
+    useLenisScrollTrigger.ts // Sincroniza scroll Lenis con GSAP
   data/
     skills.ts       // Datos de skills
     projects.ts     // Datos de proyectos
