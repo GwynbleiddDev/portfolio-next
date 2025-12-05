@@ -4,7 +4,10 @@ import { ArrowDownCircleIcon } from "@heroicons/react/16/solid";
 
 export default function Footer() {
 
-  const { t } = useLanguage();
+  const { t, language } = useLanguage()
+
+  const cvUrl = language === 'es' ? '/cv-es.pdf' : 'cv-en.pdf'
+  const cvFileName = language === 'es' ? 'CV_Alejandro_Valera_ES.pdf' : 'CV_Alejandro_Valera_EN.pdf'
 
   return (
     <div
@@ -20,7 +23,8 @@ export default function Footer() {
 
         <div className="flex flex-col md:flex-row bg-gray-950/60 border rounded-lg border-purple-900 shadow-purple-900/80 p-6 gap-4 items-center">
           <a
-            href="/cv.pdf"
+            href={cvUrl}
+            download={cvFileName}
             target="_blank"
             rel="noopener noreferrer"
             className="text-indigo-400 hover:text-indigo-200 text-sm md:text-base transition-colors duration-300 flex items-center gap-2"

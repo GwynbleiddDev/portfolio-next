@@ -9,15 +9,15 @@ type Langs = typeof langs
 
 
 type LanguageContextType = {
-  currentLang: Language
+  language: Language
   setLanguage: (lang: Language) => void
-  t: Langs['en']
+  t: Langs[Language]
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [currentLang, setCurrentLang] = useState<Language>('en')
+  const [language, setCurrentLang] = useState<Language>('en')
 
   useEffect(() => {
     const saved = localStorage.getItem('language')
@@ -32,7 +32,11 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   return (
     <LanguageContext.Provider  
-      value={{ currentLang, setLanguage, t: langs[currentLang] }}
+      value={{ 
+        language, 
+        setLanguage, 
+        t: langs[language] 
+      }}
     >
       {children}
     </LanguageContext.Provider>

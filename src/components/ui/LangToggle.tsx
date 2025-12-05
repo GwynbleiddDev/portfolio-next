@@ -4,10 +4,10 @@ import { useLanguage } from "@/context/LanguageContext"
 
 export default function LangToggle({handleClose} : {handleClose: () => void}) {
 
-  const { currentLang, setLanguage } = useLanguage()
+  const { language, setLanguage } = useLanguage()
 
   const handleToggle = () => {
-    setLanguage(currentLang === 'en' ? 'es' : 'en')
+    setLanguage(language === 'en' ? 'es' : 'en')
     handleClose()
   }
   
@@ -18,7 +18,7 @@ export default function LangToggle({handleClose} : {handleClose: () => void}) {
       >
         <GlobeAltIcon className="w-5 h-5" />
         <span className="lang-label">
-          {currentLang === 'en' ? 
+          {language === 'en' ? 
             'Cambiar a Español' : 
             'Change to English'
           }
